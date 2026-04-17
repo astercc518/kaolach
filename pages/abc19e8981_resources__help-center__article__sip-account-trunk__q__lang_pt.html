@@ -1,0 +1,1190 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="description" content="Understand what SIP is and how it is used for VoIP communication">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="https://illyvoip.com/img/xfavicon.png.pagespeed.ic.Q2rsbDv4So.webp">
+<title>What is SIP Account &amp; Trunk | IllyVoIP Help Center</title>
+<style>@charset "UTF-8";@font-face{font-family:"Plus Jakarta Sans";src:url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-Regular.woff) format("woff") , url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-Regular.ttf) format("truetype") , url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-Regular.svg#PlusJakartaSans-Regular) format("svg");font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:"Plus Jakarta Sans";src:url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-SemiBold.woff) format("woff") , url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-SemiBold.ttf) format("truetype") , url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-SemiBold.svg#PlusJakartaSans-SemiBold) format("svg");font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:"Plus Jakarta Sans";src:url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-Bold.woff) format("woff") , url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-Bold.ttf) format("truetype") , url(/assets/css/fonts//plus-jakarta-sans/PlusJakartaSans-Bold.svg#PlusJakartaSans-Bold) format("svg");font-weight:bold;font-style:normal;font-display:swap}@font-face{font-family:"Nioicon";src:url(/assets/css/fonts/Nioicon.eot);src:url(/assets/css/fonts/Nioicon.woff2) format("woff2") , url(/assets/css/fonts/Nioicon.svg#Nioicon) format("svg");font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:"swiper-icons";src:url(data:application/font-woff;charset=utf-8;base64,\ d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA);font-weight:400;font-style:normal}:root{--bs-blue:#0062ff;--bs-indigo:#6610f2;--bs-purple:#6e61f3;--bs-pink:#d63384;--bs-red:#fa5b68;--bs-orange:#fdd6c8;--bs-yellow:#fdb52a;--bs-green:#22c55e;--bs-teal:#20c997;--bs-cyan:#00ffd5;--bs-black:#000;--bs-white:#fff;--bs-gray:#c5c5ca;--bs-gray-dark:#64728f;--bs-gray-50:#e5e7eb;--bs-gray-100:#faf9ff;--bs-gray-200:#f2f8fb;--bs-gray-300:#f9f7fa;--bs-gray-400:#faf9f4;--bs-gray-500:#c9c9d4;--bs-gray-600:#c5c5ca;--bs-gray-700:#adb5bd;--bs-gray-800:#64728f;--bs-gray-900:#495057;--bs-primary:#2a9d8f;--bs-secondary:#c5c5ca;--bs-success:#22c55e;--bs-info:#00ffd5;--bs-warning:#fdb52a;--bs-danger:#fa5b68;--bs-light:#faf9ff;--bs-lighter:#e5e7eb;--bs-dark:#0a1425;--bs-dark-blue:#080829;--bs-darker:#0a1425;--bs-white:#fff;--bs-gray:#f7f8f9;--bs-gray-50:#e5e7eb;--bs-gray-100:#faf9ff;--bs-gray-200:#f2f8fb;--bs-gray-300:#f9f7fa;--bs-gray-400:#faf9f4;--bs-gray-500:#c9c9d4;--bs-gray-600:#c5c5ca;--bs-gray-700:#adb5bd;--bs-gray-800:#64728f;--bs-gray-900:#495057;--bs-gray-1000:#2b292c;--bs-gray-1100:#0f0f12;--bs-gray-1200:#0a1425;--bs-gray-1300:#181921;--bs-gray-1400:#232340;--bs-red:#fa5b68;--bs-red-50:#feebed;--bs-yellow:#fdb52a;--bs-yellow-50:#fef6ea;--bs-yellow-100:#fdeaba;--bs-yellow-200:#ffde70;--bs-green:#22c55e;--bs-green-50:#e9f9ef;--bs-green-100:#f0f6f5;--bs-green-200:#dcfce7;--bs-green-300:#bde5d3;--bs-green-400:#45c9c1;--bs-green-500:#0acf83;--bs-green-600:#54a8c7;--bs-green-700:#2a9d8f;--bs-green-800:#071a17;--bs-blue:#0062ff;--bs-blue-50:#f4f8ff;--bs-blue-100:#ebf2ff;--bs-blue-200:#f3f4ff;--bs-blue-300:#eaefff;--bs-blue-400:#e7fbff;--bs-blue-500:#e8ebff;--bs-blue-600:#f9faff;--bs-blue-700:#c3c9f1;--bs-blue-800:#6472b9;--bs-blue-900:#8c9bff;--bs-blue-1000:#589bff;--bs-blue-1100:#6576ff;--bs-blue-1200:#3f78e0;--bs-blue-1300:#6366f1;--bs-blue-1400:#3f53d8;--bs-blue-1500:#2b5cfd;--bs-blue-1600:#3b3482;--bs-blue-1700:#172166;--bs-blue-1800:#122544;--bs-blue-1900:#141834;--bs-blue-2000:#080829;--bs-purple:#6e61f3;--bs-purple-50:#eeecff;--bs-purple-100:#fceff4;--bs-purple-200:#edebfe;--bs-purple-300:#e1cbfd;--bs-purple-400:#ffc8cc;--bs-purple-500:#eb7ca6;--bs-purple-600:#9d90f1;--bs-purple-700:#9097f7;--bs-purple-800:#725efe;--bs-cyan:#00ffd5;--bs-cyan-50:#c0f2fd;--bs-cyan-100:#97f2ff;--bs-cyan-200:#13d5ff;--bs-orange:#fdd6c8;--bs-orange-100:#ef652a;--bs-primary-rgb:42 , 157 , 143;--bs-secondary-rgb:197 , 197 , 202;--bs-success-rgb:34 , 197 , 94;--bs-info-rgb:0 , 255 , 213;--bs-warning-rgb:253 , 181 , 42;--bs-danger-rgb:250 , 91 , 104;--bs-light-rgb:250 , 249 , 255;--bs-lighter-rgb:229 , 231 , 235;--bs-dark-rgb:10 , 20 , 37;--bs-dark-blue-rgb:8 , 8 , 41;--bs-darker-rgb:10 , 20 , 37;--bs-white-rgb:255 , 255 , 255;--bs-gray-rgb:247 , 248 , 249;--bs-gray-50-rgb:229 , 231 , 235;--bs-gray-100-rgb:250 , 249 , 255;--bs-gray-200-rgb:242 , 248 , 251;--bs-gray-300-rgb:249 , 247 , 250;--bs-gray-400-rgb:250 , 249 , 244;--bs-gray-500-rgb:201 , 201 , 212;--bs-gray-600-rgb:197 , 197 , 202;--bs-gray-700-rgb:173 , 181 , 189;--bs-gray-800-rgb:100 , 114 , 143;--bs-gray-900-rgb:73 , 80 , 87;--bs-gray-1000-rgb:43 , 41 , 44;--bs-gray-1100-rgb:15 , 15 , 18;--bs-gray-1200-rgb:10 , 20 , 37;--bs-gray-1300-rgb:24 , 25 , 33;--bs-gray-1400-rgb:35 , 35 , 64;--bs-red-rgb:250 , 91 , 104;--bs-red-50-rgb:254 , 235 , 237;--bs-yellow-rgb:253 , 181 , 42;--bs-yellow-50-rgb:254 , 246 , 234;--bs-yellow-100-rgb:253 , 234 , 186;--bs-yellow-200-rgb:255 , 222 , 112;--bs-green-rgb:34 , 197 , 94;--bs-green-50-rgb:233 , 249 , 239;--bs-green-100-rgb:240 , 246 , 245;--bs-green-200-rgb:220 , 252 , 231;--bs-green-300-rgb:189 , 229 , 211;--bs-green-400-rgb:69 , 201 , 193;--bs-green-500-rgb:10 , 207 , 131;--bs-green-600-rgb:84 , 168 , 199;--bs-green-700-rgb:42 , 157 , 143;--bs-green-800-rgb:7 , 26 , 23;--bs-blue-rgb:0 , 98 , 255;--bs-blue-50-rgb:244 , 248 , 255;--bs-blue-100-rgb:235 , 242 , 255;--bs-blue-200-rgb:243 , 244 , 255;--bs-blue-300-rgb:234 , 239 , 255;--bs-blue-400-rgb:231 , 251 , 255;--bs-blue-500-rgb:232 , 235 , 255;--bs-blue-600-rgb:249 , 250 , 255;--bs-blue-700-rgb:195 , 201 , 241;--bs-blue-800-rgb:100 , 114 , 185;--bs-blue-900-rgb:140 , 155 , 255;--bs-blue-1000-rgb:88 , 155 , 255;--bs-blue-1100-rgb:101 , 118 , 255;--bs-blue-1200-rgb:63 , 120 , 224;--bs-blue-1300-rgb:99 , 102 , 241;--bs-blue-1400-rgb:63 , 83 , 216;--bs-blue-1500-rgb:43 , 92 , 253;--bs-blue-1600-rgb:59 , 52 , 130;--bs-blue-1700-rgb:23 , 33 , 102;--bs-blue-1800-rgb:18 , 37 , 68;--bs-blue-1900-rgb:20 , 24 , 52;--bs-blue-2000-rgb:8 , 8 , 41;--bs-purple-rgb:110 , 97 , 243;--bs-purple-50-rgb:238 , 236 , 255;--bs-purple-100-rgb:252 , 239 , 244;--bs-purple-200-rgb:237 , 235 , 254;--bs-purple-300-rgb:225 , 203 , 253;--bs-purple-400-rgb:255 , 200 , 204;--bs-purple-500-rgb:235 , 124 , 166;--bs-purple-600-rgb:157 , 144 , 241;--bs-purple-700-rgb:144 , 151 , 247;--bs-purple-800-rgb:114 , 94 , 254;--bs-cyan-rgb:0 , 255 , 213;--bs-cyan-50-rgb:192 , 242 , 253;--bs-cyan-100-rgb:151 , 242 , 255;--bs-cyan-200-rgb:19 , 213 , 255;--bs-orange-rgb:253 , 214 , 200;--bs-orange-100-rgb:239 , 101 , 42;--bs-primary-text-emphasis:#113f39;--bs-secondary-text-emphasis:#04080f;--bs-success-text-emphasis:#0e4f26;--bs-info-text-emphasis:#065;--bs-warning-text-emphasis:#654811;--bs-danger-text-emphasis:#64242a;--bs-light-text-emphasis:#495057;--bs-dark-text-emphasis:#495057;--bs-primary-bg-subtle:#d4ebe9;--bs-secondary-bg-subtle:#ced0d3;--bs-success-bg-subtle:#d3f3df;--bs-info-bg-subtle:#ccfff7;--bs-warning-bg-subtle:#fff0d4;--bs-danger-bg-subtle:#fedee1;--bs-light-bg-subtle:#fcfcfd;--bs-dark-bg-subtle:#ced4da;--bs-primary-border-subtle:#aad8d2;--bs-secondary-border-subtle:#9da1a8;--bs-success-border-subtle:#a7e8bf;--bs-info-border-subtle:#9fe;--bs-warning-border-subtle:#fee1aa;--bs-danger-border-subtle:#fdbdc3;--bs-light-border-subtle:#e9ecef;--bs-dark-border-subtle:#adb5bd;--bs-white-rgb:255 , 255 , 255;--bs-black-rgb:0 , 0 , 0;--bs-font-sans-serif:"Plus Jakarta Sans" , sans-serif;--bs-font-monospace:SFMono-Regular , Menlo , Monaco , Consolas , "Liberation Mono" , "Courier New" , monospace;--bs-gradient:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#495057;--bs-body-color-rgb:73 , 80 , 87;--bs-body-bg:#fff;--bs-body-bg-rgb:255 , 255 , 255;--bs-emphasis-color:#000;--bs-emphasis-color-rgb:0 , 0 , 0;--bs-secondary-color:rgba(33,37,41,.75);--bs-secondary-color-rgb:33 , 37 , 41;--bs-secondary-bg:#e9ecef;--bs-secondary-bg-rgb:233 , 236 , 239;--bs-tertiary-color:rgba(33,37,41,.5);--bs-tertiary-color-rgb:33 , 37 , 41;--bs-tertiary-bg:#f8f9fa;--bs-tertiary-bg-rgb:248 , 249 , 250;--bs-heading-color: ;--bs-link-color:#2a9d8f;--bs-link-color-rgb:42 , 157 , 143;--bs-link-decoration:none;--bs-link-hover-color:#227e72;--bs-link-hover-color-rgb:34 , 126 , 114;--bs-code-color:#d63384;--bs-highlight-bg:#fff0d4;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#e5e7eb;--bs-border-color-translucent:rgba(0,0,0,.175);--bs-border-radius:.25rem;--bs-border-radius-sm:.25rem;--bs-border-radius-lg:.75rem;--bs-border-radius-xl:1.5rem;--bs-border-radius-xxl:2rem;--bs-border-radius-2xl:var(--bs-border-radius-xxl);--bs-border-radius-pill:50rem;--bs-box-shadow:0 .5rem 1rem rgba(0,0,0,.15);--bs-box-shadow-sm:0 .125rem .25rem rgba(0,0,0,.075);--bs-box-shadow-lg:0 1rem 3rem rgba(0,0,0,.175);--bs-box-shadow-inset:inset 0 1px 2px rgba(0,0,0,.075);--bs-focus-ring-width:.25rem;--bs-focus-ring-opacity:.25;--bs-focus-ring-color:rgba(42,157,143,.25);--bs-form-valid-color:#22c55e;--bs-form-valid-border-color:#22c55e;--bs-form-invalid-color:#fa5b68;--bs-form-invalid-border-color:#fa5b68}*,*::before,*::after{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family: var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}hr{margin:1rem 0;color:inherit;border:0;border-top:1px solid #f0f6f5;opacity:1}h5,h4,h3,h2,h1{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;color:var(--bs-heading-color)}h1{font-size: calc(1.425rem + 2.1vw)}@media (min-width:1200px){h1{font-size:3rem}}h2{font-size: calc(1.375rem + 1.5vw)}@media (min-width:1200px){h2{font-size:2.5rem}}h3{font-size: calc(1.325rem + 0.9vw)}@media (min-width:1200px){h3{font-size:2rem}}h4{font-size: calc(1.275rem + 0.3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}p{margin-top:0;margin-bottom:1rem}ol,ul{padding-left:2rem}ol,ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}strong{font-weight:bolder}small{font-size:.875em}a{color:rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));text-decoration:none}a:hover{--bs-link-color-rgb:var(--bs-link-hover-color-rgb)}a:not([href]):not([class]), a:not([href]):not([class]):hover {color:inherit;text-decoration:none}code{font-family: var(--bs-font-monospace);font-size:1em}code{font-size:.875em;color:var(--bs-code-color);word-wrap:break-word}img,svg{vertical-align:middle}button{border-radius:0}button:focus:not(:focus-visible) {outline:0}input,button{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button{text-transform:none}[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {display:none!important}button,[type="submit"]{-webkit-appearance:button}button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-text,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit;-webkit-appearance:button}.list-inline-item:not(:last-child) {margin-right:.5rem}.container{--bs-gutter-x:1.875rem;--bs-gutter-y:0;width:100%;padding-right: calc(var(--bs-gutter-x) * 0.5);padding-left: calc(var(--bs-gutter-x) * 0.5);margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}@media (min-width:1400px){.container{max-width:1350px}}:root{--bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;--bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}.row{--bs-gutter-x:1.875rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top: calc(-1 * var(--bs-gutter-y));margin-right: calc(-0.5 * var(--bs-gutter-x));margin-left: calc(-0.5 * var(--bs-gutter-x))}.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right: calc(var(--bs-gutter-x) * 0.5);padding-left: calc(var(--bs-gutter-x) * 0.5);margin-top:var(--bs-gutter-y)}.col-6{flex:0 0 auto;width:50%}.col-12{flex:0 0 auto;width:100%}.gy-1{--bs-gutter-y:.375rem}.g-gs{--bs-gutter-x:1.875rem}.g-gs{--bs-gutter-y:1.875rem}@media (min-width:576px){.col-sm-4{flex:0 0 auto;width:33.33333333%}.col-sm-8{flex:0 0 auto;width:66.66666667%}.gy-sm-4{--bs-gutter-y:1.5rem}}@media (min-width:768px){.col-md-4{flex:0 0 auto;width:33.33333333%}.col-md-7{flex:0 0 auto;width:58.33333333%}.col-md-8{flex:0 0 auto;width:66.66666667%}.col-md-10{flex:0 0 auto;width:83.33333333%}}@media (min-width:992px){.col-lg-3{flex:0 0 auto;width:25%}.col-lg-4{flex:0 0 auto;width:33.33333333%}.col-lg-6{flex:0 0 auto;width:50%}.col-lg-8{flex:0 0 auto;width:66.66666667%}.col-lg-9{flex:0 0 auto;width:75%}}@media (min-width:1200px){.col-xl-4{flex:0 0 auto;width:33.33333333%}.col-xl-5{flex:0 0 auto;width:41.66666667%}}@media (min-width:1400px){.col-xxl-4{flex:0 0 auto;width:33.33333333%}.col-xxl-6{flex:0 0 auto;width:50%}}.table > :not(caption) > * > * {padding:.5rem .5rem;color:var(--bs-table-color-state,var(--bs-table-color-type,var(--bs-table-color)));background-color:var(--bs-table-bg);border-bottom-width:1px;box-shadow:inset 0 0 0 9999px var(--bs-table-bg-state,var(--bs-table-bg-type,var(--bs-table-accent-bg)))}.table-sm > :not(caption) > * > * {padding:.25rem .25rem}.table-bordered > :not(caption) > * {border-width:1px 0}.table-bordered > :not(caption) > * > * {border-width:0 1px}.table-borderless > :not(caption) > * > * {border-bottom-width:0}.table-borderless > :not(:first-child) {border-top-width:0}.table-striped > tbody > tr:nth-of-type(odd) > * {--bs-table-color-type:var(--bs-table-striped-color);--bs-table-bg-type:var(--bs-table-striped-bg)}.table-striped-columns > :not(caption) > tr > :nth-child(even) {--bs-table-color-type:var(--bs-table-striped-color);--bs-table-bg-type:var(--bs-table-striped-bg)}.form-control{display:block;width:100%;padding:.75rem 1.5rem;font-family:"Plus Jakarta Sans",sans-serif;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #e5e7eb;appearance:none;border-radius:.25rem;transition:border-color .15s ease-in-out , box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.form-control{transition:none}}.form-control[type=file]:not(:disabled):not([readonly]) {cursor:pointer}.form-control:focus{color:#495057;background-color:#fff;border-color:rgba(42,157,143,.65);outline:0;box-shadow:0 0 5px 0 rgba(95,56,249,.2)}.form-control::-webkit-date-and-time-value{min-width:85px;height:1.5em;margin:0}.form-control::-webkit-datetime-edit{display:block;padding:0}.form-control::placeholder{color:#64728f;opacity:1}.form-control:disabled{background-color:#f2f8fb;opacity:1}.form-control::file-selector-button{padding:.75rem 1.5rem;margin:-.75rem -1.5rem;margin-inline-end:1.5rem;color:#495057;background-color:#f2f8fb;pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:1px;border-radius:0;transition:color .15s ease-in-out , background-color .15s ease-in-out , border-color .15s ease-in-out , box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.form-control::file-selector-button{transition:none}}.form-control:hover:not(:disabled):not([readonly])::file-selector-button {background-color:#e6ecee}.form-control-color:not(:disabled):not([readonly]) {cursor:pointer}.form-select[multiple], .form-select[size]:not([size="1"]) {padding-right:1.5rem;background-image:none}.form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {cursor:default;opacity:.5}[data-bs-theme=dark] .form-switch .form-check-input:not(:checked):not(:focus) {--bs-form-switch-bg:url(data:image/svg+xml,%3csvg\ xmlns=\'http://www.w3.org/2000/svg\'\ viewBox=\'-4\ -4\ 8\ 8\'%3e%3ccircle\ r=\'3\'\ fill=\'rgba%28255,\ 255,\ 255,\ 0.25%29\'/%3e%3c/svg%3e)}.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control-plaintext:focus,
+.form-floating > .form-control-plaintext:not(:placeholder-shown) {padding-top:1.625rem;padding-bottom:.625rem}.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control-plaintext ~ label,
+.form-floating > .form-select ~ label {color:rgba(var(--bs-body-color-rgb),.65);transform:scale(.85) translateY(-.5rem) translateX(.15rem)}.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-control-plaintext ~ label::after,
+.form-floating > .form-select ~ label::after {position:absolute;inset:1rem .75rem;z-index:-1;height:1.5em;content:"";background-color:#fff;border-radius:.25rem}.form-floating > .form-control:-webkit-autofill ~ label {color:rgba(var(--bs-body-color-rgb),.65);transform:scale(.85) translateY(-.5rem) translateX(.15rem)}.form-floating > .form-control-plaintext ~ label {border-width:1px 0}.form-floating > :disabled ~ label {color:#6c757d}.form-floating > :disabled ~ label::after {background-color:#f2f8fb}.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
+.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
+.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {border-top-right-radius:0;border-bottom-right-radius:0}.input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+.input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
+.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
+.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {border-top-right-radius:0;border-bottom-right-radius:0}.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {margin-left: calc(1px * -1);border-top-left-radius:0;border-bottom-left-radius:0}.input-group > .form-floating:not(:first-child) > .form-control,
+.input-group > .form-floating:not(:first-child) > .form-select {border-top-left-radius:0;border-bottom-left-radius:0}.was-validated :valid ~ .valid-feedback,
+.was-validated :valid ~ .valid-tooltip,
+.is-valid ~ .valid-feedback,
+.is-valid ~ .valid-tooltip {display:block}.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"] {--bs-form-select-bg-icon:url(data:image/svg+xml,%3csvg\ xmlns=\'http://www.w3.org/2000/svg\'\ viewBox=\'0\ 0\ 8\ 8\'%3e%3cpath\ fill=\'%2322c55e\'\ d=\'M2.3\ 6.73.6\ 4.53c-.4-1.04.46-1.4\ 1.1-.8l1.1\ 1.4\ 3.4-3.8c.6-.63\ 1.6-.27\ 1.2.7l-4\ 4.6c-.43.5-.8.4-1.1.1z\'/%3e%3c/svg%3e);padding-right:8.25rem;background-position:right 1.5rem center , center right 4.5rem;background-size:16px 12px , .75em , .75rem .75em , .75rem}.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color:#22c55e}.form-check-inline .form-check-input ~ .valid-feedback {margin-left:.5em}.was-validated .input-group > .form-control:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid,
+.was-validated .input-group > .form-select:not(:focus):valid,
+.input-group > .form-select:not(:focus).is-valid,
+.was-validated .input-group > .form-floating:not(:focus-within):valid,
+.input-group > .form-floating:not(:focus-within).is-valid {z-index:3}.was-validated :invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-tooltip,
+.is-invalid ~ .invalid-feedback,
+.is-invalid ~ .invalid-tooltip {display:block}.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {--bs-form-select-bg-icon:url(data:image/svg+xml,%3csvg\ xmlns=\'http://www.w3.org/2000/svg\'\ viewBox=\'0\ 0\ 12\ 12\'\ width=\'12\'\ height=\'12\'\ fill=\'none\'\ stroke=\'%23fa5b68\'%3e%3ccircle\ cx=\'6\'\ cy=\'6\'\ r=\'4.5\'/%3e%3cpath\ stroke-linejoin=\'round\'\ d=\'M5.8\ 3.6h.4L6\ 6.5z\'/%3e%3ccircle\ cx=\'6\'\ cy=\'8.2\'\ r=\'.6\'\ fill=\'%23fa5b68\'\ stroke=\'none\'/%3e%3c/svg%3e);padding-right:8.25rem;background-position:right 1.5rem center , center right 4.5rem;background-size:16px 12px , .75em , .75rem .75em , .75rem}.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {color:#fa5b68}.form-check-inline .form-check-input ~ .invalid-feedback {margin-left:.5em}.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid,
+.was-validated .input-group > .form-select:not(:focus):invalid,
+.input-group > .form-select:not(:focus).is-invalid,
+.was-validated .input-group > .form-floating:not(:focus-within):invalid,
+.input-group > .form-floating:not(:focus-within).is-invalid {z-index:4}.btn{--bs-btn-padding-x:1.5rem;--bs-btn-padding-y:.75rem;--bs-btn-font-family:Plus Jakarta Sans , sans-serif;--bs-btn-font-size:1rem;--bs-btn-font-weight:600;--bs-btn-line-height:1.5;--bs-btn-color:var(--bs-body-color);--bs-btn-bg:transparent;--bs-btn-border-width:1px;--bs-btn-border-color:transparent;--bs-btn-border-radius:.25rem;--bs-btn-hover-border-color:transparent;--bs-btn-box-shadow:inset 0 1px 0 rgba(255,255,255,.15) , 0 1px 1px rgba(0,0,0,.075);--bs-btn-disabled-opacity:.65;--bs-btn-focus-box-shadow:0 0 0 .25rem rgba(var(--bs-btn-focus-shadow-rgb),.5);display:inline-block;padding:var(--bs-btn-padding-y) var(--bs-btn-padding-x);font-family: var(--bs-btn-font-family);font-size:var(--bs-btn-font-size);font-weight:var(--bs-btn-font-weight);line-height:var(--bs-btn-line-height);color:var(--bs-btn-color);text-align:center;vertical-align:middle;cursor:pointer;user-select:none;border:var(--bs-btn-border-width) solid var(--bs-btn-border-color);border-radius:var(--bs-btn-border-radius);background-color:var(--bs-btn-bg);transition:color .15s ease-in-out , background-color .15s ease-in-out , border-color .15s ease-in-out , box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:hover{color:var(--bs-btn-hover-color);background-color:var(--bs-btn-hover-bg);border-color:var(--bs-btn-hover-border-color)}.btn:focus-visible{color:var(--bs-btn-hover-color);background-color:var(--bs-btn-hover-bg);border-color:var(--bs-btn-hover-border-color);outline:0;box-shadow:var(--bs-btn-focus-box-shadow)}.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {color:var(--bs-btn-active-color);background-color:var(--bs-btn-active-bg);border-color:var(--bs-btn-active-border-color)}.btn-check:checked + .btn:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .btn.active:focus-visible, .btn.show:focus-visible {box-shadow:var(--bs-btn-focus-box-shadow)}.btn:disabled{color:var(--bs-btn-disabled-color);pointer-events:none;background-color:var(--bs-btn-disabled-bg);border-color:var(--bs-btn-disabled-border-color);opacity:var(--bs-btn-disabled-opacity)}.btn-primary{--bs-btn-color:#fff;--bs-btn-bg:#2a9d8f;--bs-btn-border-color:#2a9d8f;--bs-btn-hover-color:#fff;--bs-btn-hover-bg:#24857a;--bs-btn-hover-border-color:#227e72;--bs-btn-focus-shadow-rgb:74 , 172 , 160;--bs-btn-active-color:#fff;--bs-btn-active-bg:#227e72;--bs-btn-active-border-color:#20766b;--bs-btn-active-shadow:inset 0 3px 5px rgba(0,0,0,.125);--bs-btn-disabled-color:#fff;--bs-btn-disabled-bg:#2a9d8f;--bs-btn-disabled-border-color:#2a9d8f}.btn-white{--bs-btn-color:#000;--bs-btn-bg:#fff;--bs-btn-border-color:#fff;--bs-btn-hover-color:#000;--bs-btn-hover-bg:white;--bs-btn-hover-border-color:white;--bs-btn-focus-shadow-rgb:217 , 217 , 217;--bs-btn-active-color:#000;--bs-btn-active-bg:white;--bs-btn-active-border-color:white;--bs-btn-active-shadow:inset 0 3px 5px rgba(0,0,0,.125);--bs-btn-disabled-color:#000;--bs-btn-disabled-bg:#fff;--bs-btn-disabled-border-color:#fff}.btn-outline-dark{--bs-btn-color:#0a1425;--bs-btn-border-color:#0a1425;--bs-btn-hover-color:#fff;--bs-btn-hover-bg:#0a1425;--bs-btn-hover-border-color:#0a1425;--bs-btn-focus-shadow-rgb:10 , 20 , 37;--bs-btn-active-color:#fff;--bs-btn-active-bg:#0a1425;--bs-btn-active-border-color:#0a1425;--bs-btn-active-shadow:inset 0 3px 5px rgba(0,0,0,.125);--bs-btn-disabled-color:#0a1425;--bs-btn-disabled-bg:transparent;--bs-btn-disabled-border-color:#0a1425;--bs-gradient:none}.fade:not(.show) {opacity:0}.collapse:not(.show) {display:none}.btn-group > :not(.btn-check:first-child) + .btn,
+.btn-group > .btn-group:not(:first-child) {margin-left: calc(1px * -1)}.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn.dropdown-toggle-split:first-child,
+.btn-group > .btn-group:not(:last-child) > .btn {border-top-right-radius:0;border-bottom-right-radius:0}.btn-group > .btn:nth-child(n+3),
+.btn-group > :not(.btn-check) + .btn,
+.btn-group > .btn-group:not(:first-child) > .btn {border-top-left-radius:0;border-bottom-left-radius:0}.btn-group-vertical > .btn:not(:first-child),
+.btn-group-vertical > .btn-group:not(:first-child) {margin-top: calc(1px * -1)}.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn {border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical > .btn ~ .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .btn {border-top-left-radius:0;border-top-right-radius:0}@media (min-width:576px){.card-group > .card:not(:last-child) {border-top-right-radius:0;border-bottom-right-radius:0}.card-group > .card:not(:last-child) .card-img-top,
+  .card-group > .card:not(:last-child) .card-header {border-top-right-radius:0}.card-group > .card:not(:last-child) .card-img-bottom,
+  .card-group > .card:not(:last-child) .card-footer {border-bottom-right-radius:0}.card-group > .card:not(:first-child) {border-top-left-radius:0;border-bottom-left-radius:0}.card-group > .card:not(:first-child) .card-img-top,
+  .card-group > .card:not(:first-child) .card-header {border-top-left-radius:0}.card-group > .card:not(:first-child) .card-img-bottom,
+  .card-group > .card:not(:first-child) .card-footer {border-bottom-left-radius:0}}.accordion-button:not(.collapsed) {color:var(--bs-accordion-active-color);background-color:var(--bs-accordion-active-bg);box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color)}.accordion-button:not(.collapsed)::after {background-image:var(--bs-accordion-btn-active-icon);transform:var(--bs-accordion-btn-icon-transform)}.accordion-item:not(:first-of-type) {border-top:0}.breadcrumb{--bs-breadcrumb-padding-x:0;--bs-breadcrumb-padding-y:0;--bs-breadcrumb-margin-bottom:1rem;--bs-breadcrumb-font-size:.875rem;--bs-breadcrumb-bg: ;--bs-breadcrumb-border-radius: ;--bs-breadcrumb-divider-color:#c5c5ca;--bs-breadcrumb-item-padding-x:.5rem;--bs-breadcrumb-item-active-color:#c5c5ca;display:flex;flex-wrap:wrap;padding:var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);margin-bottom:var(--bs-breadcrumb-margin-bottom);font-size:var(--bs-breadcrumb-font-size);list-style:none;background-color:var(--bs-breadcrumb-bg);border-radius:var(--bs-breadcrumb-border-radius)}.breadcrumb-item+.breadcrumb-item{padding-left:var(--bs-breadcrumb-item-padding-x)}.breadcrumb-item+.breadcrumb-item::before{float:left;padding-right:var(--bs-breadcrumb-item-padding-x);color:var(--bs-breadcrumb-divider-color);content:var(--bs-breadcrumb-divider,"/")}.breadcrumb-item.active{color:var(--bs-breadcrumb-item-active-color)}.page-item:not(:first-child) .page-link {margin-left:-1px}@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: 1rem;
+  }
+}.list-group-horizontal > .list-group-item:first-child:not(:last-child) {border-bottom-left-radius:var(--bs-list-group-border-radius);border-top-right-radius:0}.list-group-horizontal > .list-group-item:last-child:not(:first-child) {border-top-right-radius:var(--bs-list-group-border-radius);border-bottom-left-radius:0}@media (min-width:576px){.list-group-horizontal-sm > .list-group-item:first-child:not(:last-child) {border-bottom-left-radius:var(--bs-list-group-border-radius);border-top-right-radius:0}.list-group-horizontal-sm > .list-group-item:last-child:not(:first-child) {border-top-right-radius:var(--bs-list-group-border-radius);border-bottom-left-radius:0}}@media (min-width:768px){.list-group-horizontal-md > .list-group-item:first-child:not(:last-child) {border-bottom-left-radius:var(--bs-list-group-border-radius);border-top-right-radius:0}.list-group-horizontal-md > .list-group-item:last-child:not(:first-child) {border-top-right-radius:var(--bs-list-group-border-radius);border-bottom-left-radius:0}}@media (min-width:992px){.list-group-horizontal-lg > .list-group-item:first-child:not(:last-child) {border-bottom-left-radius:var(--bs-list-group-border-radius);border-top-right-radius:0}.list-group-horizontal-lg > .list-group-item:last-child:not(:first-child) {border-top-right-radius:var(--bs-list-group-border-radius);border-bottom-left-radius:0}}@media (min-width:1200px){.list-group-horizontal-xl > .list-group-item:first-child:not(:last-child) {border-bottom-left-radius:var(--bs-list-group-border-radius);border-top-right-radius:0}.list-group-horizontal-xl > .list-group-item:last-child:not(:first-child) {border-top-right-radius:var(--bs-list-group-border-radius);border-bottom-left-radius:0}}@media (min-width:1400px){.list-group-horizontal-xxl > .list-group-item:first-child:not(:last-child) {border-bottom-left-radius:var(--bs-list-group-border-radius);border-top-right-radius:0}.list-group-horizontal-xxl > .list-group-item:last-child:not(:first-child) {border-top-right-radius:var(--bs-list-group-border-radius);border-bottom-left-radius:0}}.toast:not(.show) {display:none}.toast-container > :not(:last-child) {margin-bottom:var(--bs-toast-spacing)}.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {transform:translateX(100%)}.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {transform:translateX(-100%)}@keyframes spinner-border {
+  to {
+    transform: rotate(360deg) /* rtl:ignore */;
+  }
+}@keyframes spinner-grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+}@media (max-width:575.98px){.offcanvas-sm.showing, .offcanvas-sm.show:not(.hiding) {transform:none}}@media (max-width:767.98px){.offcanvas-md.showing, .offcanvas-md.show:not(.hiding) {transform:none}}@media (max-width:991.98px){.offcanvas-lg.showing, .offcanvas-lg.show:not(.hiding) {transform:none}}@media (max-width:1199.98px){.offcanvas-xl.showing, .offcanvas-xl.show:not(.hiding) {transform:none}}@media (max-width:1399.98px){.offcanvas-xxl.showing, .offcanvas-xxl.show:not(.hiding) {transform:none}}.offcanvas.showing, .offcanvas.show:not(.hiding) {transform:none}@keyframes placeholder-glow {
+  50% {
+    opacity: 0.2;
+  }
+}@keyframes placeholder-wave {
+  100% {
+    mask-position: -200% 0%;
+  }
+}.text-bg-white{color:#000!important;background-color:RGBA(255,255,255,var(--bs-bg-opacity,1))!important}.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.visually-hidden:not(caption),
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {position:absolute!important}.d-flex{display:flex!important}.d-none{display:none!important}.shadow{box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important}.border-bottom{border-bottom:var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important}.border-dark{--bs-border-opacity:1;border-color:rgba(var(--bs-dark-rgb),var(--bs-border-opacity))!important}.border-gray-50{--bs-border-opacity:1;border-color:rgba(var(--bs-gray-50-rgb),var(--bs-border-opacity))!important}.w-100{width:100%!important}.h-100{height:100%!important}.flex-column{flex-direction:column!important}.justify-content-center{justify-content:center!important}.justify-content-between{justify-content:space-between!important}.align-items-start{align-items:flex-start!important}.align-items-center{align-items:center!important}.m-0{margin:0!important}.mx-auto{margin-right:auto!important;margin-left:auto!important}.mt-5{margin-top:1.875rem!important}.me-3{margin-right:1rem!important}.mb-0{margin-bottom:0!important}.mb-1{margin-bottom:.375rem!important}.mb-2{margin-bottom:.75rem!important}.mb-3{margin-bottom:1rem!important}.mb-4{margin-bottom:1.5rem!important}.p-0{padding:0!important}.p-2{padding:.75rem!important}.p-5{padding:1.875rem!important}.px-0{padding-right:0!important;padding-left:0!important}.px-3{padding-right:1rem!important;padding-left:1rem!important}.pt-2{padding-top:.75rem!important}.pt-3{padding-top:1rem!important}.pt-7{padding-top:3.75rem!important}.pt-120{padding-top:120px!important}.pb-0{padding-bottom:0!important}.pb-5{padding-bottom:1.875rem!important}.gap-2{gap:.75rem!important}.fs-14{font-size:14px!important}.fs-16{font-size:16px!important}.text-center{text-align:center!important}.text-capitalize{text-transform:capitalize!important}.text-nowrap{white-space:nowrap!important}.text-primary{--bs-text-opacity:1;color:rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important}.text-info{--bs-text-opacity:1;color:rgba(var(--bs-info-rgb),var(--bs-text-opacity))!important}.text-red{--bs-text-opacity:1;color:rgba(var(--bs-red-rgb),var(--bs-text-opacity))!important}.text-purple{--bs-text-opacity:1;color:rgba(var(--bs-purple-rgb),var(--bs-text-opacity))!important}.text-muted{--bs-text-opacity:1;color:var(--bs-secondary-color)!important}.bg-white{--bs-bg-opacity:1;background-color:rgba(var(--bs-white-rgb),var(--bs-bg-opacity))!important}.rounded-1{border-radius:var(--bs-border-radius-sm)!important}.rounded-3{border-radius:var(--bs-border-radius-lg)!important}@media (min-width:768px){.d-md-block{display:block!important}.mb-md-0{margin-bottom:0!important}.mb-md-4{margin-bottom:1.5rem!important}.ps-md-0{padding-left:0!important}}@media (min-width:992px){.d-lg-block{display:block!important}.d-lg-none{display:none!important}.flex-lg-row{flex-direction:row!important}.justify-content-lg-end{justify-content:flex-end!important}.justify-content-lg-between{justify-content:space-between!important}.me-lg-2{margin-right:.75rem!important}.mb-lg-0{margin-bottom:0!important}.ms-lg-3{margin-left:1rem!important}.p-lg-7{padding:3.75rem!important}.px-lg-0{padding-right:0!important;padding-left:0!important}.pt-lg-120{padding-top:120px!important}.pt-lg-180{padding-top:180px!important}.pb-lg-0{padding-bottom:0!important}.text-lg-start{text-align:left!important}.text-lg-end{text-align:right!important}}@media (min-width:1200px){.justify-content-xl-between{justify-content:space-between!important}}.btn{align-items:center;line-height:1.5rem;display:inline-flex;justify-content:center;text-transform:capitalize}.btn-primary:hover{background-color:#3fa79a!important}.btn:hover,.btn:active{border-color:transparent}.btn:hover:not([class*=btn-]) {color:#2a9d8f}.btn .icon{font-size:1.125rem}.btn .icon+span{margin-left:.625rem}.btn-block{display:flex;width:100%}.btn-white{color:#0a1425}.btn-zoom:hover:before, .btn-zoom:focus:before, .btn-zoom.active:not(.revarse):before {opacity:1;height:120%;width:120%}.card-journey-content .heading span:nth-child(1) {color:#0a1425;font-weight:bold;line-height:2rem;font-size:1.25rem;letter-spacing:-.015em}.card-journey-content .heading span:nth-child(2) {color:#2a9d8f;font-size:.875rem;line-height:1.375rem;letter-spacing:.01em;text-transform:capitalize}.accordion-s1 .accordion-item:not(:last-child) {margin-bottom:1.5rem}.accordion-s1 .accordion-item:not(:first-of-type) {border-top:1px solid #faf9ff}.accordion-s1 .accordion-item:not(.collapsed) .accordion-button-icon {transform:rotate(-180deg)}.accordion-s2 .accordion-item:not(:first-of-type) {border-top-left-radius:0;border-top-right-radius:0}.accordion-s2 .accordion-button:not(.collapsed) {color:inherit}.accordion-s2 .accordion-button:not(.collapsed) .on {display:none}.accordion-s2 .accordion-button:not(.collapsed) .off {display:block}.accordion-s3 .accordion-item:not(:first-of-type) {border-top-left-radius:0;border-top-right-radius:0}.accordion-s3 .accordion-button:not(.collapsed) {color:inherit}.accordion-s3 .accordion-button:not(.collapsed) .on {display:none}.accordion-s3 .accordion-button:not(.collapsed) .off {display:block}.pagination-s1 .page-item:not(:first-child) {padding-left:8px}.pagination-s1 .page-item:not(:first-child) .page-link {margin-left:0}.pagination-s1 .page-item:not(.active) .page-link:hover {background-color:#faf9ff;border-color:#faf9ff}.breadcrumb .breadcrumb-item{font-weight:600;text-transform:uppercase;letter-spacing:.04em;line-height:1.12}.form-group .form-control-wrap input{border:1px solid #e5e7eb;border-radius:.25rem;background-color:transparent}.form-group .form-control-wrap input::placeholder{font-weight:500}.form-control-wrap{position:relative}[data-aos][data-aos][data-aos-delay="100"]{transition-delay:0}[data-aos^="fade"][data-aos^="fade"]{opacity:0;transition-property:opacity , transform}[data-aos="fade-up"]{transform:translate3d(0,100px,0)}.ni{font-family:"Nioicon"!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.ni-newspaper:before{content:"\ed06"}.ni-support-fill:before{content:"\ed14"}.ni-chevrons-up:before{content:"\e9de"}.ni-plus:before{content:"\eb44"}.ni-minus:before{content:"\eafa"}.ni-help:before{content:"\ea98"}.ni-book-read:before{content:"\e970"}.ni-call-fill:before{content:"\e98f"}.ni-chat-circle-fill:before{content:"\e9b1"}.ni-chat-fill:before{content:"\e9b3"}.ni-file-code:before{content:"\ea42"}.ni-menu:before{content:"\eaec"}.ni-home:before{content:"\ea9c"}.ni-user-fill:before{content:"\ec2d"}.ni-network:before{content:"\eb10"}.ni-building:before{content:"\e97d"}.ni-headphone-fill:before{content:"\ea92"}.ni-briefcase:before{content:"\e978"}.ni-facebook-f:before{content:"\ea3e"}.ni-linkedin:before{content:"\eacb"}.ni-twitter:before{content:"\ec0f"}.ni-whatsapp:before{content:"\ec49"}.ni-telegram:before{content:"\ebec"}:root{--swiper-theme-color:#007aff}:root{--swiper-navigation-size:44px}:root{}:root{}.swiper:not(.swiper-watch-progress) .swiper-lazy-preloader,
+.swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader {animation:swiper-preloader-spin 1s infinite linear}@keyframes swiper-preloader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}.nk-body{outline:none}.nk-app-root{outline:none}@media (max-width:360px){.nk-body{min-width:350px}}.logo-wrap{display:inline-flex;position:relative}.logo-link{display:inline-flex}.logo-img{height:100%}.logo-img:not(:first-child) {}.nk-header-main{top:0;left:0;width:100%;z-index:999;padding:.8438rem 0;transition:padding .2s linear;background-color:transparent;position:fixed}.nk-header-main.has-separate{border-bottom:1px solid #e5e7eb}.nk-header-wrap{position:relative;width:100%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}.nk-header-logo{display:inline-flex}.nk-header-action{padding-top:.375rem;padding-bottom:.375rem}.nk-navbar-toggle .btn .icon{font-size:1.375rem}@keyframes overlay-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}@keyframes overlay-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}.nk-nav{display:flex;flex-direction:column;padding:.5rem 0;max-height:100%;overflow:auto}.nk-nav-item{position:relative}@media (max-width:991.98px){.nk-nav-item.has-sub{overflow:hidden}}.nk-nav-link{display:flex;align-items:center;color:#0a1425;font-weight:600;font-size:1rem;background-color:transparent;padding:.625rem 1rem}.nk-nav-link em{font-size:1.5rem;line-height:2rem}.nk-nav-toggle:after{font-size:.875rem;position:relative;content:"\e9c5";font-family:"Nioicon";margin-left:auto;right:-.25rem;top:1px;transition:transform .3s linear}.nk-nav-sub{padding:0 .75rem;z-index:1;overflow:hidden;display:none}.nk-nav-sub .nk-nav-link{color:#0a1425;font-size:.875rem;font-weight:600;line-height:1.6}.nk-nav-sub .nk-nav-link:hover{color:#2a9d8f;background-color:rgba(42,157,143,.1)}.nk-nav-sub .nk-nav-link .media-group{align-items:center}.nk-nav-sub ul{width:100%}.nk-nav-mega .nk-nav-item{padding:0}.nk-nav-mega .nk-nav-link{padding:.625rem;border-radius:.5rem}@media (min-width:992px){.nk-nav-mega-lg-home{left:-200px!important}}.nk-navbar{top:0;left:0;bottom:0;width:85%;height:100%;display:flex;position:fixed;flex-direction:column;z-index:1025;justify-content:space-between;background-color:#fff;transform:translateX(-100%);box-shadow:0 0 10px rgba(10,20,37,.1)}.nk-navbar-btn{padding:1rem}.is-theme .nk-header-action a:not([class*=btn-outline-]) {color:#fff}@media (min-width:480px){.nk-navbar{width:330px}}@media (min-width:992px){.nk-nav{flex-direction:row;padding:0;overflow:visible}.nk-nav-item{display:flex;position:relative;align-items:center}.nk-nav-item:hover>.nk-nav-sub{opacity:1;visibility:visible;transform:translateY(0)}.nk-nav-item>.nk-nav-link{padding-top:1.5rem;padding-bottom:1.5rem}.nk-nav-sub{padding:.938rem .75rem;display:block!important;position:absolute;top:100%;background-color:#fff;transition:.2s;min-width:232px;box-shadow:0 2px 13px 0 rgba(173,181,189,.15);border-radius:1rem;opacity:0;visibility:hidden;transform:translateY(5px)}.nk-nav-sub .nk-nav-link{flex-grow:1}.nk-nav-mega{width:630px;display:flex!important}.nk-nav-mega .nk-nav-item{padding-left:.625rem;padding-right:.625rem}.nk-nav-mega-lg{left:-390px;width:920px}.nk-nav-media{flex-shrink:1;padding:.5rem 0}.nk-navbar{width:auto;height:auto;transform:none;position:static;box-shadow:none;flex-direction:row;background-color:transparent}.nk-navbar-toggle{display:none}}@media (min-width:1200px){.nk-nav-mega .nk-nav-item{flex-grow:1;min-width:214px;display:block}}.nk-banner-language h1 span:nth-child(2), .nk-banner-language .h1 span:nth-child(2) {font-weight:600}@media (max-width:575.98px){.nk-banner-language h1 span:nth-child(2), .nk-banner-language .h1 span:nth-child(2) {margin-bottom:12px}.nk-banner-language h1 span:nth-child(2), .nk-banner-language .h1 span:nth-child(2), .nk-banner-language h1 span:nth-child(3), .nk-banner-language .h1 span:nth-child(3) {width:100%;display:block}}.nk-section{z-index:1;position:relative;padding:30px 0}@media (min-width:992px){.nk-section{padding:60px 0}}.nk-section-head{padding-bottom:30px}@media (min-width:768px){.nk-section-head{padding-bottom:60px}}.nk-section-title{font-size:1.75rem;color:#0a1425;line-height:1.33;font-weight:bold;margin-bottom:16px;text-transform:capitalize}@media (min-width:768px){.nk-section-title{font-size:3rem}}.nk-section-product-details .nk-social > ul li:nth-last-child(1)::after {display:none}.careers .nk-section-career-details .nk-section-blog-details ul li p:nth-child(1) {width:30%}.careers .nk-section-career-details .nk-section-blog-details ul li p:last-child(1) {width:70%}.nk-footer{background-color:#fff}.nk-footer-top .nk-footer-content{border-bottom:1px solid #e5e7eb;padding:3.125rem 0}@media (min-width:768px){.nk-footer-top .nk-footer-content{padding:3.75rem 0}}.nk-footer-bottom .nk-footer-content{padding:.9375rem 0}@media (min-width:768px){.nk-footer-bottom .nk-footer-content{padding:1.875rem 0}}.nk-footer-copyright-text{color:#0a1425;font-size:1rem;line-height:1.5;font-weight:500;text-transform:capitalize}.nk-footer-brand-info .nk-footer-logo{margin-bottom:16px}.nk-footer-brand-info p{font-size:16px;line-height:1.5}.nk-footer-social{display:flex;align-items:center;gap:12px}.nk-footer-social li a{display:flex;align-items:center;justify-content:center;transition:all .3s linear;width:40px;height:40px;color:#2a9d8f;border:0 solid #e5e7eb;border-radius:6px;background-color:#2a9d8f}@media (max-width:575.98px){.nk-footer-info{margin-bottom:24px}}.nk-footer-info .title{margin-bottom:24px;color:#0a1425;font-size:20px;line-height:1.6;font-weight:700;text-transform:capitalize}@media (min-width:576px){.nk-footer-info .title{margin-bottom:24px}}.nk-footer-info ul li a{transition:all .3s linear;color:#64728f;font-size:1rem;text-transform:capitalize;line-height:1.5}.nk-footer-info ul li a:hover{color:#2a9d8f}.nk-footer-copyright{gap:6px;display:flex;align-items:center}@media (min-width:576px){.nk-footer-copyright{gap:16px}}.nk-footer-copyright li:nth-last-child(1)::after {display:none}.nk-footer-bottom .nk-list-link li:nth-last-child(1)::after {display:none}body{color:#64728f;font-size:1rem;font-weight:400;font-family:"Plus Jakarta Sans",sans-serif}a{transition:color .2s , background-color .2s , border .2s , box-shadow .2s}h1,h2,h3,h4,h5{font-weight:bold;color:#0a1425}h1:where(:last-child),
+h2:where(:last-child),
+h3:where(:last-child),
+h4:where(:last-child),
+h5:where(:last-child),
+h6:where(:last-child),
+.h1:where(:last-child),
+.h2:where(:last-child),
+.h3:where(:last-child),
+.h4:where(:last-child),
+.h5:where(:last-child),
+.h6:where(:last-child),
+p:where(:last-child) {margin-bottom:0}.is-theme h3,.is-theme p{color:#fff}ol,ul{list-style:none;margin:0;padding:0}img{max-width:100%}hr{border:0;color:inherit;margin:1rem 0;border-top:1px solid #f0f6f5;opacity:1}h1{line-height:1.33}h2{line-height:1.25}h3{line-height:1.61;letter-spacing:-.02em}h4{line-height:1.68;letter-spacing:-.015em}h5{line-height:1.6;letter-spacing:-.01em}.bg-primary-gradient{background:linear-gradient(23.01deg,#2b5cfd 14.9%,#1d3faf 85.1%)}.on{display:block}.off{display:none}@media (max-width:575.98px){h1{font-size:1.625rem}h2{font-size:1.5rem}h5{font-size:1.125rem}p{font-size:1rem}}.btn-primary{background-color:#2a9d8f!important}.nk-btn-group{gap:1rem;display:flex}.nk-btn-group.sm{gap:-.5rem}.nk-btn-group.sm>*{gap:.5rem}@media (max-width:575.98px){.nk-btn-group .btn{padding:8px 16px;font-size:14px!important}}.nk-mask{top:0;left:0;right:0;bottom:0;z-index:-1;user-select:none;position:absolute;pointer-events:none}.blur-1{display:none}@media (min-width:768px){.blur-1{display:block}}.blur-1.left::before{left:0;opacity:.4;width:212px;content:"";height:500px;position:absolute;background-size:contain;background-repeat:no-repeat;background-image:url(/assets/images/blur/a.png)}.blur-1.left.top::before{top:0}.blur-1.right::after{right:0;opacity:.4;width:212px;content:"";height:500px;position:absolute;background-size:contain;background-repeat:no-repeat;background-image:url(/assets/images/blur/b.png)}.blur-1.right.bottom::after{bottom:0}@media (min-width:576px){.blur-1::before{width:350px}.blur-1::after{width:370px}}.text-primary{color:#2a9d8f!important}.text-red{color:#fa5b68!important}.text-purple{color:#6e61f3!important}.text-base{color:#0a1425!important}.lead-text{font-weight:500;color:#0a1425;display:block}.sub-text{font-size:.75rem;color:#64728f;display:block;font-weight:400}.media{flex-shrink:0;width:3.25rem;height:3.25rem;overflow:hidden;color:#0a1425;font-size:1.0833333333rem;border-radius:.5rem}.media .icon{font-size:1.625rem}.media-circle{border-radius:50rem!important}.media-middle{display:inline-flex;align-items:center;justify-content:center}.media-group{display:flex;flex-grow:1}.media-group .lead-text+.sub-text{margin-top:.25rem}.media-lg{z-index:1;width:4rem;height:4rem;font-size:1.3333333333rem}.media-lg .icon{font-size:2rem}.nk-list-link li{display:flex;align-items:center;padding-top:.625rem;padding-bottom:.625rem}.nk-list-link li a{line-height:1.5;display:block;color:#64728f}.nk-list-link li a:hover{color:#2a9d8f}.nk-list-link.flush > li:not(:last-child) {border-bottom:1px solid #e5e7eb;padding-top:1rem;padding-bottom:1rem}.nk-list-link-page li a:not(:hover) {color:#0a1425}.nk-list-link-collapse li{display:flex;flex-direction:column}.nk-list-link-collapse .nk-list-dot{padding-left:1rem;font-weight:500}.nk-list-link-collapse-link{display:flex!important;align-items:center;justify-content:space-between;color:#0a1425!important;font-weight:600}.nk-list-link-collapse-link[aria-expanded="true"]{color:#2a9d8f!important}.nk-list-link-collapse-link[aria-expanded="true"] .on{display:none}.nk-list-link-collapse-link[aria-expanded="true"] .off{display:block}.nk-list-dot-item{position:relative;padding-left:1.25rem;padding-bottom:1.25rem}.nk-list-dot-item::after{position:absolute;content:"";top:12px;left:0;width:6px;height:6px;background-color:#c9c9d4;border-radius:50%}.nk-list-dot-sm .nk-list-dot-item{padding-left:.75rem;font-size:.875rem}.nk-list-dot-sm .nk-list-dot-item::after{top:20px;width:3px;height:3px}.nk-timeline-item:not(:last-child) {padding-bottom:1.625rem}.timeline-dots li:nth-child(1)::after {top:12px}.timeline-dots li:nth-last-child(1)::after {height:calc(100% - 70px)}@media (min-width:576px){.timeline-dots li:nth-last-child(1)::after {height:calc(100% - 34px)}}.timeline-dots li:nth-last-child(1) .circle {top:8px}.timeline-dots li:nth-last-child(1) .circle::after {background-color:#fa5b68}@media (min-width:992px){.nk-integrate-item:nth-child(1) .nk-integrate-brand {width:148px;height:148px}.nk-integrate-item:nth-child(2) {margin-top:50px}.nk-integrate-item:nth-child(2) .nk-integrate-brand {width:111px;height:111px}.nk-integrate-item:nth-child(3) {margin-top:10px}.nk-integrate-item:nth-child(3) .nk-integrate-brand {width:130px;height:130px}.nk-integrate-item:nth-child(4) {margin-top:30px}.nk-integrate-item:nth-child(4) .nk-integrate-brand {width:139px;height:139px}.nk-integrate-item:nth-child(5) .nk-integrate-brand {width:156px;height:156px}.nk-integrate-item:nth-child(6) .nk-integrate-brand {width:120px;height:120px}.nk-integrate-item:nth-child(7) {margin-top:20px}.nk-integrate-item:nth-child(7) .nk-integrate-brand {width:130px;height:130px}.nk-integrate-item:nth-child(8) .nk-integrate-brand {width:158px;height:158px}.nk-integrate-item:nth-child(9) .nk-integrate-brand {width:112px;height:112px}.nk-integrate-item:nth-child(10) .nk-integrate-brand {width:148px;height:148px}.nk-integrate-item:nth-child(11) .nk-integrate-brand {width:112px;height:112px}}.nk-schedule-item:not(:last-child) .nk-schedule-item-inner {padding-bottom:1.25rem}.nk-schedule-s2 .nk-schedule-item:not(:last-child) .nk-schedule-item-inner {padding-bottom:0}.nk-schedule-s3 .nk-schedule-item:nth-last-child(2) .nk-schedule-symbol::before {width:0;background-color:transparent;border:1px dashed #2a9d8f}.nk-swiper-s2 .swiper-slide:not(.swiper-slide-active) {opacity:.7;pointer-events:none}.nk-pricing-toggle-s1 input[type=radio]:checked + label + .switch-highlight,
+.nk-pricing-toggle-s1 input[type=radio]:checked + label:nth-of-type(n) + .switch-highlight, .nk-pricing-toggle-s2 input[type=radio]:checked + label + .switch-highlight,
+.nk-pricing-toggle-s2 input[type=radio]:checked + label:nth-of-type(n) + .switch-highlight {transform:translateX(90px)}.nk-pricing-toggle-s3 .form-check input:not(:checked) + .two {opacity:.6}.nk-pricing-head .icon:not(.badge .icon) {font-size:3.875rem;color:#2a9d8f;margin-right:.75rem}.nk-table-crypto tbody tr:nth-last-child(1) {border-color:transparent}.nk-entry{color:#0a1425;font-weight:400}.nk-entry img{border-radius:.25rem}.nk-entry h2+p,.nk-entry h3+p{margin-top:1rem}.nk-entry img:not(:last-child) {margin-bottom:2rem}.nk-entry p+h2,.nk-entry p+h3{margin-top:2rem}.nk-entry ul+h2,.nk-entry ol+h2,.nk-entry ol+h3{margin-top:1.25rem}.nk-entry ul,.nk-entry ol{list-style:inherit;padding-left:1rem}.nk-entry ol{list-style-type:decimal}.nk-entry ul li,.nk-entry ol li{line-height:1.8}.journey-item:nth-child(1)::after {display:none}.journey-item:nth-last-child(1)::before {display:none}@media (min-width:992px){.journey-item:nth-child(odd) {justify-content:flex-end}}.call-to-action a:nth-child(2) {gap:.875rem;display:flex;align-items:center;justify-content:center}.call-to-action a:nth-child(2) span {color:#fff;font-size:.75rem;line-height:1.25rem}@keyframes horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-600px);
+  }
+}@keyframes horizontalAlternate {
+  from {
+    transform: translateX(-600px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}@keyframes vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-970px);
+  }
+}@keyframes verticalAlternate {
+  from {
+    transform: translateY(-970px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}.scroll-top{right:12px;bottom:70px;width:60px;height:60px;z-index:9999;display:flex;font-size:24px;cursor:pointer;position:fixed;overflow:hidden;border-radius:50%;align-items:center;justify-content:center;color:#fff;transition:all .2s linear;background-color:#2a9d8f;opacity:0;user-select:none;pointer-events:none}@media (min-width:576px){.scroll-top{bottom:50px}}@media (min-width:768px){.scroll-top{bottom:60px}}@media (min-width:1200px){.scroll-top{right:24px}}.scroll-top:hover{color:#fff;background-color:#55b1a5}.animate{animation-fill-mode:both;animation-duration:1s}.animate-infinite{animation-iteration-count:infinite}.animate-duration-2{animation-duration:2s}.animate-pulse{animation-name:pulse;animation-timing-function:ease-in-out}@keyframes shakeY {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(0, -10px, 0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate3d(0, 10px, 0);
+  }
+}@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}.nk-sticky-badge{right:0;top:50%;z-index:999;position:fixed;overflow:hidden;transform:translateY(-50%);border-top-left-radius:4px;border-bottom-left-radius:4px}.nk-sticky-badge-icon{color:#fff;font-size:18px;padding:8px 12px;overflow:hidden;transform:scale(1);display:block;transition:all .2s linear}.nk-sticky-badge-icon:hover{color:#fff}.nk-sticky-badge-icon:active{transform:scale(.9)}.nk-sticky-badge-telegram{background-color:#2b5cfd}.nk-sticky-badge-whatsapp{background-color:#07ba63}.nk-newsletter-one .form-control-wrap .form-control,.nk-newsletter-one .form-control-wrap input{padding:1.25rem 1.25rem;color:#0a1425;background-color:#fff}.nk-newsletter-one .form-control-wrap .form-control:focus,.nk-newsletter-one .form-control-wrap input:focus{box-shadow:none;border-color:#2a9d8f}@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}@media (min-width:768px){.nk-search-group .nk-search-element > div:nth-last-child(1)::after {display:none}}</style>
+<meta property="og:title" content="What is SIP Account &amp; Trunk">
+<meta property="og:site_name" content="ILLYVOIP">
+<meta property="og:description" content="Understand what SIP is and how it is used for VoIP communication">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://illyvoip.com/resources/help-center/article/sip-account-trunk">
+<meta property="og:image" content="https://illyvoip.com/img/main-og-image.jpg">
+<script defer="" referrerpolicy="origin" src="/cdn-cgi/zaraz/s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyV2hhdCUyMGlzJTIwU0lQJTIwQWNjb3VudCUyMCUyNiUyMFRydW5rJTIwJTdDJTIwSWxseVZvSVAlMjBIZWxwJTIwQ2VudGVyJTIyJTJDJTIyeCUyMiUzQTAuNDEwNzc1NTI0NTIyNzU4MjMlMkMlMjJ3JTIyJTNBMTI4MCUyQyUyMmglMjIlM0E3MjAlMkMlMjJqJTIyJTNBNzIwJTJDJTIyZSUyMiUzQTEyODAlMkMlMjJsJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZpbGx5dm9pcC5jb20lMkZyZXNvdXJjZXMlMkZoZWxwLWNlbnRlciUyRmFydGljbGUlMkZzaXAtYWNjb3VudC10cnVuayUzRmxhbmclM0RwdCUyMiUyQyUyMnIlMjIlM0ElMjIlMjIlMkMlMjJrJTIyJTNBMjQlMkMlMjJuJTIyJTNBJTIyVVRGLTglMjIlMkMlMjJvJTIyJTNBLTQ4MCUyQyUyMnElMjIlM0ElNUIlNUQlN0Q="></script><script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','regions':'all'});gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'});</script>
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e4dba9b477ff13055411d223/script.js"></script>
+
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z116ZKKXW8');</script>
+<script type="text/javascript">!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2275426319413229');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2275426319413229&ev=PageView&noscript=1" data-pagespeed-url-hash="2612803347"/></noscript>
+<script data-cfasync="false" nonce="01b95f50-7ea5-4fe1-bba8-b6c918b7cdc7">try{(function(w,d){!function(bH,bI,bJ,bK){if(bH.zaraz)console.error("zaraz is loaded twice");else{bH[bJ]=bH[bJ]||{};bH[bJ].executed=[];bH.zaraz={deferred:[],listeners:[]};bH.zaraz._v="5876";bH.zaraz._n="01b95f50-7ea5-4fe1-bba8-b6c918b7cdc7";bH.zaraz.q=[];bH.zaraz._f=function(bL){return async function(){var bM=Array.prototype.slice.call(arguments);bH.zaraz.q.push({m:bL,a:bM})}};for(const bN of["track","set","ecommerce","debug"])bH.zaraz[bN]=bH.zaraz._f(bN);bH.zaraz.init=()=>{var bO=bI.getElementsByTagName(bK)[0],bP=bI.createElement(bK),bQ=bI.getElementsByTagName("title")[0];bQ&&(bH[bJ].t=bI.getElementsByTagName("title")[0].text);bH[bJ].x=Math.random();bH[bJ].w=bH.screen.width;bH[bJ].h=bH.screen.height;bH[bJ].j=bH.innerHeight;bH[bJ].e=bH.innerWidth;bH[bJ].l=bH.location.href;bH[bJ].r=bI.referrer;bH[bJ].k=bH.screen.colorDepth;bH[bJ].n=bI.characterSet;bH[bJ].o=(new Date).getTimezoneOffset();if(bH.dataLayer)for(const bR of Object.entries(Object.entries(dataLayer).reduce((bS,bT)=>({...bS[1],...bT[1]}),{})))zaraz.set(bR[0],bR[1],{scope:"page"});bH[bJ].q=[];for(;bH.zaraz.q.length;){const bU=bH.zaraz.q.shift();bH[bJ].q.push(bU)}bP.defer=!0;for(const bV of[localStorage,sessionStorage])Object.keys(bV||{}).filter(bX=>bX.startsWith("_zaraz_")).forEach(bW=>{try{bH[bJ]["z_"+bW.slice(7)]=JSON.parse(bV.getItem(bW))}catch{bH[bJ]["z_"+bW.slice(7)]=bV.getItem(bW)}});bP.referrerPolicy="origin";bP.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bH[bJ])));bO.parentNode.insertBefore(bP,bO)};["complete","interactive"].includes(bI.readyState)?zaraz.init():bH.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bc=>new Promise(bd=>{if(bc){bc.e&&bc.e.forEach(be=>{try{const bf=d.querySelector("script[nonce]"),bg=bf?.nonce||bf?.getAttribute("nonce"),bh=d.createElement("script");bg&&(bh.nonce=bg);bh.innerHTML=be;bh.onload=()=>{d.head.removeChild(bh)};d.head.appendChild(bh)}catch(bi){console.error(`Error executing script: ${be}\n`,bi)}});Promise.allSettled((bc.f||[]).map(bj=>fetch(bj[0],bj[1])))}bd()});zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script><script>(function(w,d){})(window,document)</script><script>(function(w,d){;w.zarazData.executed.push("Pageview");})(window,document)</script><script>(function(w,d){})(window,document)</script><link rel="preload" as="script" href="https://cdn-cookieyes.com/client_data/e4dba9b477ff13055411d223/script.js"><link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=G-Z116ZKKXW8"><link rel="preload" as="script" href="https://illyvoip.com/assets/js/bundle.js?v1.0.0"><link rel="preload" as="script" href="https://illyvoip.com/assets/js/scripts.js?v1.0.0"><script src="https://cdn-cookieyes.com/client_data/e4dba9b477ff13055411d223/banner.js" async="" id="cookieyes-banner"></script><style class="fslightbox-styles">.fslightbox-absoluted{position:absolute;top:0;left:0}.fslightbox-fade-in{animation:fslightbox-fade-in .3s cubic-bezier(0,0,.7,1)}.fslightbox-fade-out{animation:fslightbox-fade-out .3s ease}.fslightbox-fade-in-strong{animation:fslightbox-fade-in-strong .3s cubic-bezier(0,0,.7,1)}.fslightbox-fade-out-strong{animation:fslightbox-fade-out-strong .3s ease}@keyframes fslightbox-fade-in{from{opacity:.65}to{opacity:1}}@keyframes fslightbox-fade-out{from{opacity:.35}to{opacity:0}}@keyframes fslightbox-fade-in-strong{from{opacity:.3}to{opacity:1}}@keyframes fslightbox-fade-out-strong{from{opacity:1}to{opacity:0}}.fslightbox-cursor-grabbing{cursor:grabbing}.fslightbox-full-dimension{width:100%;height:100%}.fslightbox-open{overflow:hidden;height:100%}.fslightbox-flex-centered{display:flex;justify-content:center;align-items:center}.fslightbox-opacity-0{opacity:0!important}.fslightbox-opacity-1{opacity:1!important}.fslightbox-scrollbarfix{padding-right:17px}.fslightbox-transform-transition{transition:transform .3s}.fslightbox-container{font-family:Arial,sans-serif;position:fixed;top:0;left:0;background:linear-gradient(rgba(30,30,30,.9),#000 1810%);touch-action:pinch-zoom;z-index:1000000000;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}.fslightbox-container *{box-sizing:border-box}.fslightbox-svg-path{transition:fill .15s ease;fill:#ddd}.fslightbox-nav{height:45px;width:100%;position:absolute;top:0;left:0}.fslightbox-slide-number-container{display:flex;justify-content:center;align-items:center;position:relative;height:100%;font-size:15px;color:#d7d7d7;z-index:0;max-width:55px;text-align:left}.fslightbox-slide-number-container .fslightbox-flex-centered{height:100%}.fslightbox-slash{display:block;margin:0 5px;width:1px;height:12px;transform:rotate(15deg);background:#fff}.fslightbox-toolbar{position:absolute;z-index:3;right:0;top:0;height:100%;display:flex;background:rgba(35,35,35,.65)}.fslightbox-toolbar-button{height:100%;width:45px;cursor:pointer}.fslightbox-toolbar-button:hover .fslightbox-svg-path{fill:#fff}.fslightbox-slide-btn-container{display:flex;align-items:center;padding:12px 12px 12px 6px;position:absolute;top:50%;cursor:pointer;z-index:3;transform:translateY(-50%)}@media (min-width:476px){.fslightbox-slide-btn-container{padding:22px 22px 22px 6px}}@media (min-width:768px){.fslightbox-slide-btn-container{padding:30px 30px 30px 6px}}.fslightbox-slide-btn-container:hover .fslightbox-svg-path{fill:#f1f1f1}.fslightbox-slide-btn{padding:9px;font-size:26px;background:rgba(35,35,35,.65)}@media (min-width:768px){.fslightbox-slide-btn{padding:10px}}@media (min-width:1600px){.fslightbox-slide-btn{padding:11px}}.fslightbox-slide-btn-container-previous{left:0}@media (max-width:475.99px){.fslightbox-slide-btn-container-previous{padding-left:3px}}.fslightbox-slide-btn-container-next{right:0;padding-left:12px;padding-right:3px}@media (min-width:476px){.fslightbox-slide-btn-container-next{padding-left:22px}}@media (min-width:768px){.fslightbox-slide-btn-container-next{padding-left:30px}}@media (min-width:476px){.fslightbox-slide-btn-container-next{padding-right:6px}}.fslightbox-down-event-detector{position:absolute;z-index:1}.fslightbox-slide-swiping-hoverer{z-index:4}.fslightbox-invalid-file-wrapper{font-size:22px;color:#eaebeb;margin:auto}.fslightbox-video{object-fit:cover}.fslightbox-youtube-iframe{border:0}.fslightboxl{display:block;margin:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:67px;height:67px}.fslightboxl div{box-sizing:border-box;display:block;position:absolute;width:54px;height:54px;margin:6px;border:5px solid;border-color:#999 transparent transparent transparent;border-radius:50%;animation:fslightboxl 1.2s cubic-bezier(.5,0,.5,1) infinite}.fslightboxl div:nth-child(1){animation-delay:-.45s}.fslightboxl div:nth-child(2){animation-delay:-.3s}.fslightboxl div:nth-child(3){animation-delay:-.15s}@keyframes fslightboxl{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.fslightbox-source{position:relative;z-index:2;opacity:0}</style><style id="cky-style">.cky-overlay{background:#000;opacity:.4;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999999}.cky-hide{display:none}.cky-btn-revisit-wrapper{display:flex;align-items:center;justify-content:center;background:#0056a7;width:45px;height:45px;border-radius:50%;position:fixed;z-index:999999;cursor:pointer}.cky-revisit-bottom-left{bottom:15px;left:15px}.cky-revisit-bottom-right{bottom:15px;right:15px}.cky-btn-revisit-wrapper .cky-btn-revisit{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;position:relative;margin:0;padding:0}.cky-btn-revisit-wrapper .cky-btn-revisit img{max-width:fit-content;margin:0;height:30px;width:30px}.cky-revisit-bottom-left:hover::before{content:attr(data-tooltip);position:absolute;background:#4e4b66;color:#fff;left:calc(100% + 7px);font-size:12px;line-height:16px;width:max-content;padding:4px 8px;border-radius:4px}.cky-revisit-bottom-left:hover::after{position:absolute;content:"";border:5px solid #fff0;left:calc(100% + 2px);border-left-width:0;border-right-color:#4e4b66}.cky-revisit-bottom-right:hover::before{content:attr(data-tooltip);position:absolute;background:#4e4b66;color:#fff;right:calc(100% + 7px);font-size:12px;line-height:16px;width:max-content;padding:4px 8px;border-radius:4px}.cky-revisit-bottom-right:hover::after{position:absolute;content:"";border:5px solid #fff0;right:calc(100% + 2px);border-right-width:0;border-left-color:#4e4b66}.cky-revisit-hide{display:none}.cky-consent-container{position:fixed;width:440px;box-sizing:border-box;z-index:9999999;border-radius:6px}.cky-consent-container .cky-consent-bar{background:#fff;border:1px solid;padding:20px 26px;box-shadow:0 -1px 10px 0 #acabab4d;border-radius:6px}.cky-box-bottom-left{bottom:40px;left:40px}.cky-box-bottom-right{bottom:40px;right:40px}.cky-box-top-left{top:40px;left:40px}.cky-box-top-right{top:40px;right:40px}.cky-custom-brand-logo-wrapper .cky-custom-brand-logo{width:100px;height:auto;margin:0 0 12px 0}.cky-notice .cky-title{color:#212121;font-weight:700;font-size:18px;line-height:24px;margin:0 0 12px 0;word-break:break-word}.cky-notice-des *,.cky-preference-content-wrapper *,.cky-dma-content-wrapper *,.cky-accordion-header-des *,.cky-gpc-wrapper .cky-gpc-desc *{font-size:14px}.cky-notice-des{color:#212121;font-size:14px;line-height:24px;font-weight:400}.cky-notice-des img{min-height:25px;min-width:25px}.cky-consent-bar .cky-notice-des p,.cky-gpc-wrapper .cky-gpc-desc p,.cky-preference-body-wrapper .cky-preference-content-wrapper p,.cky-accordion-header-wrapper .cky-accordion-header-des p,.cky-cookie-des-table li div:last-child p{color:inherit;margin-top:0;word-break:break-word}.cky-notice-des P:last-child,.cky-preference-content-wrapper p:last-child,.cky-cookie-des-table li div:last-child p:last-child,.cky-gpc-wrapper .cky-gpc-desc p:last-child{margin-bottom:0}.cky-notice-des a.cky-policy,.cky-notice-des button.cky-policy,.cky-notice-des a.cky-link-default,.cky-dma-content-wrapper a.cky-policy,.cky-dma-content-wrapper button.cky-policy{font-size:14px;color:#1863dc;white-space:nowrap;cursor:pointer;background:#fff0}.cky-notice-des a.cky-policy,.cky-notice-des button.cky-policy,.cky-dma-content-wrapper a.cky-policy,.cky-dma-content-wrapper button.cky-policy{text-decoration:underline;border:1px solid}.cky-notice-des a.cky-link-default{text-decoration:underline}.cky-notice-des button.cky-policy,.cky-dma-content-wrapper button.cky-policy{padding:0}.cky-notice-des a.cky-policy:focus-visible,.cky-notice-des button.cky-policy:focus-visible,.cky-dma-content-wrapper a.cky-policy:focus-visible,.cky-dma-content-wrapper button.cky-policy:focus-visible,.cky-preference-content-wrapper .cky-show-desc-btn:focus-visible,.cky-accordion-header .cky-accordion-btn:focus-visible,.cky-preference-header .cky-btn-close:focus-visible,.cky-switch input[type="checkbox"]:focus-visible,.cky-footer-wrapper a:focus-visible,.cky-btn:focus-visible{outline:2px solid #1863dc;outline-offset:2px}.cky-btn:focus:not(:focus-visible),.cky-accordion-header .cky-accordion-btn:focus:not(:focus-visible),.cky-preference-content-wrapper .cky-show-desc-btn:focus:not(:focus-visible),.cky-btn-revisit-wrapper .cky-btn-revisit:focus:not(:focus-visible),.cky-preference-header .cky-btn-close:focus:not(:focus-visible),.cky-consent-bar .cky-banner-btn-close:focus:not(:focus-visible){outline:0}button.cky-show-desc-btn:not(:hover):not(:active){color:#1863dc;background:#fff0}button.cky-accordion-btn:not(:hover):not(:active),button.cky-banner-btn-close:not(:hover):not(:active),button.cky-btn-revisit:not(:hover):not(:active),button.cky-btn-close:not(:hover):not(:active){background:#fff0}.cky-consent-bar button:hover,.cky-modal.cky-modal-open button:hover,.cky-consent-bar button:focus,.cky-modal.cky-modal-open button:focus{text-decoration:none}.cky-notice-btn-wrapper{display:flex;justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:8px;margin-top:16px}.cky-notice-btn-wrapper .cky-btn{text-shadow:none;box-shadow:none}.cky-btn{flex:auto;max-width:100%;font-size:14px;font-family:inherit;line-height:24px;padding:8px;font-weight:500;border-radius:2px;cursor:pointer;text-align:center;text-transform:none;min-height:0;overflow-wrap:break-word}.cky-btn:hover{opacity:.8}.cky-btn-customize{color:#1863dc;background:#fff0;border:2px solid #1863dc}.cky-btn-reject{color:#1863dc;background:#fff0;border:2px solid #1863dc}.cky-btn-accept{background:#1863dc;color:#fff;border:2px solid #1863dc}.cky-btn:last-child{margin-right:0}@media (max-width:576px){.cky-box-bottom-left{bottom:0;left:0}.cky-box-bottom-right{bottom:0;right:0}.cky-box-top-left{top:0;left:0}.cky-box-top-right{top:0;right:0}}@media (max-width:440px){.cky-box-bottom-left,.cky-box-bottom-right,.cky-box-top-left,.cky-box-top-right{width:100%;max-width:100%}.cky-consent-container .cky-consent-bar{padding:20px 0}.cky-custom-brand-logo-wrapper,.cky-notice .cky-title,.cky-notice-des,.cky-notice-btn-wrapper{padding:0 24px}.cky-notice-des{max-height:40vh;overflow-y:scroll}.cky-notice-btn-wrapper{gap:10px;flex-direction:column}.cky-btn{width:100%}.cky-notice-btn-wrapper .cky-btn-customize{order:2}.cky-notice-btn-wrapper .cky-btn-reject{order:3}.cky-notice-btn-wrapper .cky-btn-accept{order:1}}@media (max-width:352px){.cky-notice .cky-title{font-size:16px}.cky-notice-des *{font-size:12px}.cky-notice-des,.cky-btn{font-size:12px}}.cky-modal.cky-modal-open{display:flex;visibility:visible;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);top:50%;left:50%;transition:all 1s ease;max-height:100%}.cky-modal{box-shadow:0 32px 68px rgb(0 0 0 / .3);margin:0 auto;position:fixed;max-width:100%;background:#fff;top:50%;box-sizing:border-box;border-radius:6px;z-index:999999999;color:#212121;-webkit-transform:translate(-50%,100%);-moz-transform:translate(-50%,100%);-ms-transform:translate(-50%,100%);-o-transform:translate(-50%,100%);transform:translate(-50%,100%);visibility:hidden;transition:all 0s ease}.cky-preference-center{max-height:79vh;overflow:hidden;width:845px;overflow:hidden;flex:1 1 0%;display:flex;flex-direction:column;border-radius:6px}@media (max-height:576px){.cky-preference-center{height:100vh;overflow:auto}.cky-preference-center .cky-preference-body-wrapper{overflow:unset}}@media (max-height:480px){.cky-consent-container{max-height:100vh;overflow-y:scroll}.cky-notice-des{max-height:unset;overflow-y:unset}}@media (min-width:576px) and (max-height:660px){.cky-notice-des{max-height:40vh;overflow-y:scroll}}.cky-preference-header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid}.cky-preference-header .cky-preference-title{font-size:18px;font-weight:700;line-height:24px;word-break:break-word}.cky-preference-header .cky-btn-close{margin:0;cursor:pointer;vertical-align:middle;padding:0;background:none;border:none;width:24px;height:24px;min-height:0;line-height:0;text-shadow:none;box-shadow:none}.cky-preference-header .cky-btn-close img{margin:0;height:10px;width:10px}.cky-preference-body-wrapper{padding:0 24px;flex:1;overflow:auto;box-sizing:border-box}.cky-preference-content-wrapper,.cky-gpc-wrapper .cky-gpc-desc{font-size:14px;line-height:24px;font-weight:400;padding:12px 0}.cky-preference-content-wrapper img{min-height:25px;min-width:25px}.cky-preference-content-wrapper .cky-show-desc-btn{font-size:14px;font-family:inherit;color:#1863dc;text-decoration:none;line-height:24px;padding:0;margin:0;white-space:nowrap;cursor:pointer;background:#fff0;border-color:#fff0;text-transform:none;min-height:0;text-shadow:none;box-shadow:none}.cky-accordion-wrapper{margin-bottom:10px}.cky-accordion{border-bottom:1px solid}.cky-accordion:last-child{border-bottom:none}.cky-accordion .cky-accordion-item{display:flex;margin-top:10px}.cky-accordion .cky-accordion-body{display:none}.cky-accordion.cky-accordion-active .cky-accordion-body{display:block;padding:0 22px;margin-bottom:16px}.cky-accordion-header-wrapper{cursor:pointer;width:100%}.cky-accordion-item .cky-accordion-header{display:flex;justify-content:space-between;align-items:center}.cky-accordion-header .cky-accordion-btn{font-size:16px;font-family:inherit;color:#212121;line-height:24px;background:none;border:none;font-weight:700;padding:0;margin:0;cursor:pointer;text-transform:none;min-height:0;text-shadow:none;box-shadow:none}.cky-accordion-header .cky-always-active{color:green;font-weight:600;line-height:24px;font-size:14px}.cky-accordion-header-des{font-size:14px;line-height:24px;margin:10px 0 16px 0}.cky-accordion-chevron{margin-right:22px;position:relative;cursor:pointer}.cky-accordion-chevron-hide{display:none}.cky-accordion .cky-accordion-chevron i::before{content:"";position:absolute;border-right:1.4px solid;border-bottom:1.4px solid;border-color:inherit;height:6px;width:6px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);transition:all 0.2s ease-in-out;top:8px}.cky-accordion.cky-accordion-active .cky-accordion-chevron i::before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.cky-audit-table{background:#f4f4f4;border-radius:6px}.cky-audit-table .cky-empty-cookies-text{color:inherit;font-size:12px;line-height:24px;margin:0;padding:10px;word-break:break-word}.cky-audit-table .cky-cookie-des-table{font-size:12px;line-height:24px;font-weight:400;padding:15px 10px;border-bottom:1px solid;border-bottom-color:inherit;margin:0}.cky-audit-table .cky-cookie-des-table:last-child{border-bottom:none}.cky-audit-table .cky-cookie-des-table li{list-style-type:none;display:flex;padding:3px 0}.cky-audit-table .cky-cookie-des-table li:first-child{padding-top:0}.cky-cookie-des-table li div:first-child{width:100px;font-weight:600;word-break:break-word;word-wrap:break-word}.cky-cookie-des-table li div:last-child{flex:1;word-break:break-word;word-wrap:break-word;margin-left:8px}.cky-footer-shadow{display:block;width:100%;height:40px;background:linear-gradient(180deg,#fff0 0%,#ffffff 100%);position:absolute;bottom:calc(100% - 1px)}.cky-footer-wrapper{position:relative}.cky-prefrence-btn-wrapper{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:22px 24px;border-top:1px solid}.cky-prefrence-btn-wrapper .cky-btn{flex:auto;max-width:100%;text-shadow:none;box-shadow:none}.cky-btn-preferences{color:#1863dc;background:#fff0;border:2px solid #1863dc}.cky-preference-header,.cky-preference-body-wrapper,.cky-accordion-wrapper,.cky-accordion,.cky-accordion-wrapper,.cky-footer-wrapper,.cky-prefrence-btn-wrapper{border-color:inherit}.cky-preference-body-wrapper .cky-dma-content-wrapper{font-size:14px;line-height:24px;font-weight:400;padding:4px 0 12px}.cky-preference-body-wrapper .cky-dma-content-wrapper p{color:inherit;word-break:break-word}.cky-preference-body-wrapper .cky-dma-content-wrapper p:first-child{margin-top:0}.cky-preference-body-wrapper .cky-dma-content-wrapper p:last-child{margin-bottom:0}.cky-preference-body-wrapper .cky-horizontal-separator{border-bottom:1px solid;border-color:inherit}@media (max-width:845px){.cky-modal{max-width:calc(100% - 16px)}}@media (max-width:576px){.cky-modal{max-width:100%}.cky-preference-center{max-height:100vh}.cky-prefrence-btn-wrapper{flex-direction:column;gap:10px}.cky-accordion.cky-accordion-active .cky-accordion-body{padding-right:0}.cky-prefrence-btn-wrapper .cky-btn{width:100%}.cky-prefrence-btn-wrapper .cky-btn-reject{order:3}.cky-prefrence-btn-wrapper .cky-btn-accept{order:1;margin-top:0}.cky-prefrence-btn-wrapper .cky-btn-preferences{order:2}}@media (max-width:425px){.cky-accordion-chevron{margin-right:15px}.cky-accordion.cky-accordion-active .cky-accordion-body{padding:0 15px}}@media (max-width:352px){.cky-preference-header .cky-preference-title{font-size:16px}.cky-preference-header{padding:16px 24px}.cky-preference-content-wrapper *,.cky-accordion-header-des *,.cky-dma-content-wrapper *{font-size:12px}.cky-preference-content-wrapper,.cky-preference-body-wrapper .cky-dma-content-wrapper,.cky-preference-content-wrapper .cky-show-more,.cky-accordion-header .cky-always-active,.cky-accordion-header-des,.cky-preference-content-wrapper .cky-show-desc-btn,.cky-notice-des a.cky-policy,.cky-dma-content-wrapper a.cky-policy{font-size:12px}.cky-accordion-header .cky-accordion-btn{font-size:14px}}.cky-switch{display:flex}.cky-switch input[type="checkbox"]{position:relative;width:44px;height:24px;margin:0;background:#d0d5d2;-webkit-appearance:none;border-radius:50px;cursor:pointer;outline:0;border:none;top:0}.cky-switch input[type="checkbox"]:checked{background:#1863dc}.cky-switch input[type="checkbox"]:before{position:absolute;content:"";height:20px;width:20px;left:2px;bottom:2px;border-radius:50%;background-color:#fff;-webkit-transition:0.4s;transition:0.4s;margin:0}.cky-switch input[type="checkbox"]:after{display:none}.cky-switch input[type="checkbox"]:checked:before{-webkit-transform:translateX(20px);-ms-transform:translateX(20px);transform:translateX(20px)}@media (max-width:425px){.cky-switch input[type="checkbox"]{width:38px;height:21px}.cky-switch input[type="checkbox"]:before{height:17px;width:17px}.cky-switch input[type="checkbox"]:checked:before{-webkit-transform:translateX(17px);-ms-transform:translateX(17px);transform:translateX(17px)}}.cky-consent-bar .cky-banner-btn-close{position:absolute;right:9px;top:5px;background:none;border:none;cursor:pointer;padding:0;margin:0;min-height:0;line-height:0;height:24px;width:24px;text-shadow:none;box-shadow:none}.cky-consent-bar .cky-banner-btn-close img{height:9px;width:9px;margin:0}.cky-notice-group{font-size:14px;line-height:24px;font-weight:400;color:#212121}.cky-notice-btn-wrapper .cky-btn-do-not-sell{font-size:14px;line-height:24px;padding:6px 0;margin:0;font-weight:500;background:none;border-radius:2px;border:none;cursor:pointer;text-align:left;color:#1863dc;background:#fff0;border-color:#fff0;box-shadow:none;text-shadow:none;word-break:break-word;text-decoration:underline}.cky-consent-bar .cky-banner-btn-close:focus-visible,.cky-notice-btn-wrapper .cky-btn-do-not-sell:focus-visible,.cky-opt-out-btn-wrapper .cky-btn:focus-visible,.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:focus-visible{outline:2px solid #1863dc;outline-offset:2px}@media (max-width:440px){.cky-consent-container{width:100%}}@media (max-width:352px){.cky-notice-des a.cky-policy,.cky-notice-des a.cky-link-default,.cky-notice-btn-wrapper .cky-btn-do-not-sell{font-size:12px}}.cky-opt-out-wrapper{padding:12px 0}.cky-opt-out-wrapper .cky-opt-out-checkbox-wrapper{display:flex;align-items:center}.cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{font-size:16px;font-weight:700;line-height:24px;margin:0 0 0 12px;cursor:pointer;word-break:break-word}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox{background-color:#fff;border:1px solid #000;width:20px;height:18.5px;margin:0;-webkit-appearance:none;position:relative;display:flex;align-items:center;justify-content:center;border-radius:2px;cursor:pointer}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:checked{background-color:#1863dc;border:none}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:checked::after{left:6px;bottom:4px;width:7px;height:13px;border:solid #fff;border-width:0 3px 3px 0;border-radius:2px;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);content:"";position:absolute;box-sizing:border-box}.cky-opt-out-checkbox-wrapper.cky-disabled .cky-opt-out-checkbox-label,.cky-opt-out-checkbox-wrapper.cky-disabled input[type="checkbox"].cky-opt-out-checkbox{cursor:no-drop}.cky-gpc-wrapper{margin:0 0 0 32px}.cky-footer-wrapper .cky-opt-out-btn-wrapper{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:22px 24px}.cky-opt-out-btn-wrapper .cky-btn{flex:auto;max-width:100%;text-shadow:none;box-shadow:none}.cky-opt-out-btn-wrapper .cky-btn-cancel{border:1px solid #dedfe0;background:#fff0;color:#858585}.cky-opt-out-btn-wrapper .cky-btn-confirm{background:#1863dc;color:#fff;border:1px solid #1863dc}@media (max-width:440px){.cky-footer-wrapper .cky-opt-out-btn-wrapper{gap:10px}}@media (max-width:352px){.cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{font-size:14px}.cky-gpc-wrapper .cky-gpc-desc,.cky-gpc-wrapper .cky-gpc-desc *{font-size:12px}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox{width:16px;height:16px}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:checked::after{left:5px;bottom:4px;width:3px;height:9px}.cky-gpc-wrapper{margin:0 0 0 28px}}.video-placeholder-youtube{background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-color:#b2b0b059;position:relative;display:flex;align-items:center;justify-content:center;max-width:100%}.video-placeholder-text-youtube{text-align:center;align-items:center;padding:10px 16px;background-color:#000c;color:#fff;border:1px solid;border-radius:2px;cursor:pointer}.video-placeholder-normal{background-image:url(https://cdn-cookieyes.com/assets/images/cky-placeholder.svg);background-size:80px;background-position:center;background-repeat:no-repeat;background-color:#b2b0b059;position:relative;display:flex;align-items:flex-end;justify-content:center;max-width:100%}.video-placeholder-text-normal{align-items:center;padding:10px 16px;text-align:center;border:1px solid;border-radius:2px;cursor:pointer}.cky-rtl{direction:rtl;text-align:right}.cky-rtl .cky-banner-btn-close{left:9px;right:auto}.cky-rtl .cky-notice-btn-wrapper .cky-btn:last-child{margin-right:8px}.cky-rtl .cky-notice-btn-wrapper .cky-btn:first-child{margin-right:0}.cky-rtl .cky-notice-btn-wrapper{margin-left:0;margin-right:15px}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn{margin-right:8px}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn:first-child{margin-right:0}.cky-rtl .cky-accordion .cky-accordion-chevron i::before{border:none;border-left:1.4px solid;border-top:1.4px solid;left:12px}.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-chevron i::before{-webkit-transform:rotate(-135deg);-moz-transform:rotate(-135deg);-ms-transform:rotate(-135deg);-o-transform:rotate(-135deg);transform:rotate(-135deg)}@media (max-width:768px){.cky-rtl .cky-notice-btn-wrapper{margin-right:0}}@media (max-width:576px){.cky-rtl .cky-notice-btn-wrapper .cky-btn:last-child{margin-right:0}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn{margin-right:0}.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-body{padding:0 22px 0 0}}@media (max-width:425px){.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-body{padding:0 15px 0 0}}.cky-rtl .cky-opt-out-btn-wrapper .cky-btn{margin-right:12px}.cky-rtl .cky-opt-out-btn-wrapper .cky-btn:first-child{margin-right:0}.cky-rtl .cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{margin:0 12px 0 0}@supports not (gap:10px){.cky-btn{margin:0 8px 0 0}@media (max-width:440px){.cky-notice-btn-wrapper{margin-top:0}.cky-btn{margin:10px 0 0 0}.cky-notice-btn-wrapper .cky-btn-accept{margin-top:16px}}@media (max-width:576px){.cky-prefrence-btn-wrapper .cky-btn{margin:10px 0 0 0}}@media (max-width:425px){.cky-notice-btn-wrapper{margin-top:0}}} </style><script>(function(w,d){;w.zarazData.executed.push("AllTracks");})(window,document)</script><script>(function(w,d){{(function(w,d){zaraz.__zarazMCListeners={"google-analytics_v4_loen":["visibilityChange"]};})(window,document);}})(window,document)</script></head>
+<body class="nk-body" data-navbar-collapse="xl" data-aos-easing="ease" data-aos-duration="900" data-aos-delay="0"><div class="cky-hide cky-overlay"></div><div class="cky-btn-revisit-wrapper cky-revisit-hide cky-revisit-bottom-left" data-cky-tag="revisit-consent" data-tooltip="Consent Preferences" style="background-color: #0056a7;"><button aria-label="Consent Preferences" class="cky-btn-revisit" aria-controls="ckyPreferenceCenter" aria-haspopup="dialog"><img alt="Revisit consent button" src="https://cdn-cookieyes.com/assets/images/revisit.svg"></button></div><div class="cky-consent-container cky-box-bottom-left" tabindex="-1" aria-label="We value your privacy" role="region"><div class="cky-consent-bar" data-cky-tag="notice" style="border-color: #f4f4f4; background-color: #FFFFFF;"><div class="cky-notice"><p class="cky-title" aria-level="2" data-cky-tag="title" role="heading" style="color: #212121;">We value your privacy</p><div class="cky-notice-group"><div class="cky-notice-des" data-cky-tag="description" style="color: #212121;"><p>We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.</p></div><div class="cky-notice-btn-wrapper" data-cky-tag="notice-buttons"><button class="cky-btn cky-btn-customize" aria-label="Customise" aria-haspopup="dialog" aria-controls="ckyPreferenceCenter" data-cky-tag="settings-button" style="color: #1863dc; border-color: #1863dc; background-color: transparent;">Customise</button> <button class="cky-btn cky-btn-reject" aria-label="Reject All" data-cky-tag="reject-button" style="color: #FFFFFF; border-color: #1863dc; background-color: #1863dc;">Reject All</button> <button class="cky-btn cky-btn-accept" aria-label="Accept All" data-cky-tag="accept-button" style="color: #FFFFFF; border-color: #1863dc; background-color: #1863dc;">Accept All</button> </div></div></div></div></div><div class="cky-modal" tabindex="-1"><div class="cky-preference-center" data-cky-tag="detail" aria-label="Customise Consent Preferences" aria-modal="true" id="ckyPreferenceCenter" role="dialog" style="color: #212121; border-color: #F4F4F4; background-color: #FFFFFF;"><div class="cky-preference-header"><span class="cky-preference-title" aria-level="2" data-cky-tag="detail-title" role="heading" style="color: #212121;">Customise Consent Preferences</span> <button aria-label="Close" class="cky-btn-close" data-cky-tag="detail-close"><img alt="" src="https://cdn-cookieyes.com/assets/images/close.svg"></button></div><div class="cky-preference-body-wrapper"><div class="cky-preference-content-wrapper" data-cky-tag="detail-description" style="color: #212121;"><p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p><p>The cookies that are categorised as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. ...&nbsp;<button class="cky-show-desc-btn" data-cky-tag="show-desc-button" aria-label="Show more">Show more</button></p></div><div class="cky-horizontal-separator"></div><div class="cky-accordion-wrapper" data-cky-tag="detail-categories"><div class="cky-accordion" id="ckyDetailCategorynecessary"><div class="cky-accordion-item"><div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-controls="ckyDetailCategorynecessaryBody" aria-label="Necessary" data-cky-tag="detail-category-title" style="color: #212121;">Necessary</button><span class="cky-always-active" data-cky-tag="always-active">Always Active</span></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p></div></div></div><div class="cky-accordion-body" id="ckyDetailCategorynecessaryBody"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>cookieyes-consent</div></li><li><div>Duration</div><div>1 year</div></li><li><div>Description</div><div>CookieYes sets this cookie to remember users' consent preferences so that their preferences are respected on subsequent visits to this site. It does not collect or store any personal information about the site visitors.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>PHPSESSID</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is native to PHP applications. The cookie stores and identifies a user's unique session ID to manage user sessions on the website. The cookie is a session cookie and will be deleted when all the browser windows are closed.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>rc::a</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>rc::c</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul></div></div></div><div class="cky-accordion" id="ckyDetailCategoryfunctional"><div class="cky-accordion-item"><div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-controls="ckyDetailCategoryfunctionalBody" aria-label="Functional" data-cky-tag="detail-category-title" style="color: #212121;">Functional</button><div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchfunctional" aria-label="Enable Functional" autocomplete="off" style="background-color: rgb(208, 213, 210);"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p></div></div></div><div class="cky-accordion-body" id="ckyDetailCategoryfunctionalBody"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_chatwoot_session</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>ChatWoot sets this cookie for the live support application to distinguish users.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>cw_conversation</div></li><li><div>Duration</div><div>1 year</div></li><li><div>Description</div><div>Chatwoot sets this cookie is used by the live support application to reload the chat details of the user returning to the website.</div></li></ul></div></div></div><div class="cky-accordion" id="ckyDetailCategoryanalytics"><div class="cky-accordion-item"><div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-controls="ckyDetailCategoryanalyticsBody" aria-label="Analytics" data-cky-tag="detail-category-title" style="color: #212121;">Analytics</button><div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchanalytics" aria-label="Enable Analytics" autocomplete="off" style="background-color: rgb(208, 213, 210);"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p></div></div></div><div class="cky-accordion-body" id="ckyDetailCategoryanalyticsBody"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_ga_*</div></li><li><div>Duration</div><div>1 year 1 month 4 days</div></li><li><div>Description</div><div>Google Analytics sets this cookie to store and count page views.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_ga</div></li><li><div>Duration</div><div>1 year 1 month 4 days</div></li><li><div>Description</div><div>Google Analytics sets this cookie to calculate visitor, session and campaign data and track site usage for the site's analytics report. The cookie stores information anonymously and assigns a randomly generated number to recognise unique visitors.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_gcl_au</div></li><li><div>Duration</div><div>3 months</div></li><li><div>Description</div><div>Google Tag Manager sets the cookie to experiment advertisement efficiency of websites using their services.</div></li></ul><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>_fbp</div></li><li><div>Duration</div><div>3 months</div></li><li><div>Description</div><div>Facebook sets this cookie to display advertisements when either on Facebook or on a digital platform powered by Facebook advertising after visiting the website.</div></li></ul></div></div></div><div class="cky-accordion" id="ckyDetailCategoryperformance"><div class="cky-accordion-item"><div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-controls="ckyDetailCategoryperformanceBody" aria-label="Performance" data-cky-tag="detail-category-title" style="color: #212121;">Performance</button></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p></div></div></div><div class="cky-accordion-body" id="ckyDetailCategoryperformanceBody"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><p class="cky-empty-cookies-text">No cookies to display.</p></div></div></div><div class="cky-accordion" id="ckyDetailCategoryadvertisement"><div class="cky-accordion-item"><div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-controls="ckyDetailCategoryadvertisementBody" aria-label="Advertisement" data-cky-tag="detail-category-title" style="color: #212121;">Advertisement</button><div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchadvertisement" aria-label="Enable Advertisement" autocomplete="off" style="background-color: rgb(208, 213, 210);"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.</p></div></div></div><div class="cky-accordion-body" id="ckyDetailCategoryadvertisementBody"><div class="cky-audit-table" data-cky-tag="audit-table" style="color: #212121; border-color: #ebebeb; background-color: #f4f4f4;"><ul class="cky-cookie-des-table"><li><div>Cookie</div><div>test_cookie</div></li><li><div>Duration</div><div>15 minutes</div></li><li><div>Description</div><div>doubleclick.net sets this cookie to determine if the user's browser supports cookies.</div></li></ul></div></div></div></div></div><div class="cky-footer-wrapper"><span class="cky-footer-shadow" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);"></span><div class="cky-prefrence-btn-wrapper" data-cky-tag="detail-buttons"><button aria-label="Reject All" class="cky-btn cky-btn-reject" data-cky-tag="detail-reject-button" style="color: #ffffff; border-color: #1863dc; background-color: #1863dc;">Reject All</button> <button aria-label="Save My Preferences" class="cky-btn cky-btn-preferences" data-cky-tag="detail-save-button" style="color: #ffffff; border-color: #1863dc; background-color: #1863dc;">Save My Preferences</button> <button aria-label="Accept All" class="cky-btn cky-btn-accept" data-cky-tag="detail-accept-button" style="color: #ffffff; border-color: #1863dc; background-color: #1863dc;">Accept All</button></div><div data-cky-tag="detail-powered-by" style="padding: 8px 24px; font-size: 12px; font-weight: 400; line-height: 20px; text-align: right; border-radius: 0 0 6px 6px; direction: ltr; display: flex; justify-content: flex-end; align-items: center; color: #293C5B; background-color: #EDEDED;">Powered by <a href="https://www.cookieyes.com/product/cookie-consent/?ref=cypbcyb&amp;utm_source=cookie-banner&amp;utm_medium=powered-by-cookieyes" rel="noopener" style="margin-left:5px;line-height:0" target="_blank"><img alt="Cookieyes logo" src="https://cdn-cookieyes.com/assets/images/poweredbtcky.svg" style="width:78px;height:13px;margin:0"></a></div></div></div></div><noscript><meta HTTP-EQUIV="refresh" content="0;url='https://illyvoip.com/resources/help-center/article/sip-account-trunk?lang=pt&amp;PageSpeed=noscript'" /><style><!--table,div,span,font,p{display:none} --></style><div style="display:block">Please click <a href="https://illyvoip.com/resources/help-center/article/sip-account-trunk?lang=pt&amp;PageSpeed=noscript">here</a> if you are not redirected within a few seconds.</div></noscript>
+<div class="nk-app-root ">
+<header class="nk-header">
+<div class="nk-header-main nk-navbar-main  bg-white has-separate">
+<div class="container">
+<div class="nk-header-wrap">
+<div class="nk-header-logo">
+<a href="https://illyvoip.com/" class="logo-link">
+<div class="logo-wrap">
+<script data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://illyvoip.com/resources/help-center/article/sip-account-trunk?lang=pt','BWXPG7VGiV',true,false,'dtiEeqFXE-U');
+//]]></script><img fetchpriority="high" alt="IllyVoIP LLC" class="logo-img" src="data:image/webp;base64,UklGRmQCAABXRUJQVlA4TFcCAAAvmsAJEF8QEYraNmJTpXB7fy9AOUT8d06QbNu2KUknHFm2bduuP4hW2UiVolVKtsq27WoFUm/93bvn3nj3jVQzov+O3LaRJObW2FxVmWDeIP2v1m/cmOxPSSuQlXl37hxS97n5JfW0Di6o+4Yj/DrDpX90n1Ns1Q+cvdWwuJb9VxuXeF4+BS1KAN3WufRASsb9AtjmSFohfzoAmvyMA5KhArSUoS40Dt6L/EDVFJcLfZha7vdYj96ITthZhJ16QRfC+7T3CQer/ie9lGFGqAz5fXq3izBTqliVr40ZXopwNNQNGenjf0ItKDcuCN39E7rgYCdp8bIO3qs73+tb1XOpIrBU5Cf8T1gcSUh5/QZ7IaXPSEqQE+njvXzRS58XQNai23hcH+S8VCFv7pyh3rlS5pk0Vd1W0gV5h7wVe4SXJ7BSnZHoIKfMnXbLf4GRDmkRHdOD7nDzvaSop0zMnHrA6HRLGKdgp9fsMh00PtAd0g3Jsrm3NxqJgY5+QEVTN2Z7VFdFk4zHV3hrHXYRRgRcEPflEQ6ZGC7rVWJFXAct5k6pWMvqjv8xmQf6l6PODtNV7j7PWOwkfn1uTT4uaF1GSu/TMpFfEX+DSdMc2ejKrhHy1doePR96a8wHO0mLeOrEsWtFrCwVrMpFmF3Tfa2zJrV1djONgqVFosxVXxK4pptjmDzTshEsF18F2GnrssaAyCtjqTjVB6HDYotcTyAfKc6Z+vpJtVpwXX39EvGvHkjF+EfDV6H+NdyXfqMTYGU/k+1fWqRfeZ/uRwr19SmJxRmTr3+XAAA=" srcset="https://illyvoip.com/img/brandid/logos/logo-2x.webp 2x" data-pagespeed-url-hash="2382752474" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1"> </div>
+</a>
+</div>
+<nav class="nk-header-menu nk-navbar">
+<div>
+<ul class="nk-nav">
+<li class="nk-nav-item has-sub">
+<a href="#" class="nk-nav-link nk-nav-toggle">
+<span class="nk-nav-text">Products</span>
+</a>
+<ul style="display:block !important;" class="nk-nav-sub nk-nav-mega nk-nav-mega-lg nk-nav-mega-lg-home">
+<li class="nk-nav-item">
+<ul class="row mx-auto">
+<li class="col-lg-6 col-xl-4 p-0">
+<a href="https://illyvoip.com/voice-termination" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-call-fill"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Voice Termination/Transit</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Enterprise SIP trunking</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="col-lg-6 col-xl-4 p-0">
+<a href="https://illyvoip.com/phone-numbers" class="nk-nav-link">
+<div class="media-group">
+<div class="text-info me-3">
+<em class="icon ni ni-call-fill"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Phone Numbers</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Local, national, or mobile numbers</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="col-lg-6 col-xl-4 p-0">
+<a href="https://illyvoip.com/toll-free-numbers" class="nk-nav-link">
+<div class="media-group">
+<div class="text-purple me-3">
+<em class="icon ni ni-headphone-fill"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Toll-Free Numbers</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Free-to-call (0800) business numbers</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="col-lg-6 col-xl-4 p-0">
+<a href="https://illyvoip.com/sms-messaging" class="nk-nav-link">
+<div class="media-group">
+<div class="text-red me-3">
+<em class="icon ni ni-chat-circle-fill"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">SMS Messaging</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Personal, business, and bulk SMS</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nk-nav-item has-sub">
+<a href="#" class="nk-nav-link nk-nav-toggle">
+<span class="nk-nav-text">Solutions</span>
+</a>
+<ul class="nk-nav-sub nk-nav-mega row nk-nav-mega-lg">
+<li class="nk-nav-item col-lg-8">
+<ul class="row px-3 px-lg-0 mx-auto">
+<li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/carrier-voice-termination" class="nk-nav-link"> Carrier Voice Termination </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/wholesale-voice-termination" class="nk-nav-link"> Wholesale Voice Termination </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/businesses" class="nk-nav-link"> Businesses </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/call-centers-helpdesk" class="nk-nav-link"> Call Centers &amp; Helpdesk </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/sales-marketing" class="nk-nav-link"> Sales &amp; Marketing </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/health-industry" class="nk-nav-link"> Health Industry </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/banking-financial-services" class="nk-nav-link"> Banking &amp; Financial Services </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/education-elearning" class="nk-nav-link"> Education &amp; eLearning </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/logistics-transportation" class="nk-nav-link"> Logistics &amp; Transportation </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/retail-ecommerce" class="nk-nav-link"> Retail &amp; eCommerce </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/hospitality" class="nk-nav-link"> Hospitality </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/manufacturing" class="nk-nav-link"> Manufacturing </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/government-public-services" class="nk-nav-link"> Government &amp; Public Services </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/technology-startups" class="nk-nav-link"> Technology &amp; Startups </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/real-estate" class="nk-nav-link"> Real Estate </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/nonprofits-ngos" class="nk-nav-link"> Nonprofits &amp; NGOs </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/media-entertainment" class="nk-nav-link"> Media &amp; Entertainment </a>
+</li>	<li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/solutions/" class="nk-nav-link"> See all solutions </a>
+</li>
+</ul>
+</li>
+<li class="nk-nav-item col-lg-4 nk-nav-media d-none d-lg-block">
+<a href="https://illyvoip.com/my/register" target="_blank">
+<img loading="lazy" src="https://illyvoip.com/img/main/xsignup.jpg.pagespeed.ic.lZUOTZ-6to.webp" alt="promo-banner" class="rounded-3" data-pagespeed-url-hash="2139299520" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+</a>
+</li>
+</ul>
+</li>
+<li class="nk-nav-item has-sub">
+<a href="#" class="nk-nav-link nk-nav-toggle">
+<span class="nk-nav-text">Features</span>
+</a>
+<ul class="nk-nav-sub nk-nav-mega row nk-nav-mega-lg">
+<li class="nk-nav-item col-lg-8">
+<ul class="row px-3 px-lg-0 mx-auto">
+<li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/5-minute-automated-setup" class="nk-nav-link"> 5-Minute Automated Setup </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/instant-service-activation" class="nk-nav-link"> Instant Service Activation </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/free-trial-credits" class="nk-nav-link"> Free Trial Credits </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/multi-carrier-routing" class="nk-nav-link"> Multi-Carrier Routing </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/direct-access-control-of-cli" class="nk-nav-link"> Direct Access &amp; Control of CLI </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/superior-call-quality-with-advanced-qos" class="nk-nav-link"> Superior Call Quality with Advanced QoS </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/global-data" class="nk-nav-link"> Global Data </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/web-based-phone-dialer" class="nk-nav-link"> Web-Based Phone Dialer </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/powerful-auto-dialer" class="nk-nav-link"> Powerful Auto Dialer </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/calendar-appointment-scheduling" class="nk-nav-link"> Calendar &amp; Appointment Scheduling </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/advanced-real-time-calling-reports" class="nk-nav-link"> Advanced Real-Time Calling Reports </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/market-leading-pricing" class="nk-nav-link"> Market-Leading Pricing </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/global-phone-numbers" class="nk-nav-link"> Global Phone Numbers </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/advanced-ivr-call-queues" class="nk-nav-link"> Advanced IVR &amp; Call Queues </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/number-portability-from-any-other-provider" class="nk-nav-link"> Number Portability from Any Other Provider </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/full-featured-lead-management-suite" class="nk-nav-link"> Full Featured Lead Management Suite </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/live-call-monitoring-spy-whisper-control" class="nk-nav-link"> Live Call Monitoring: Spy, Whisper, &amp; Control </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/call-recordings-with-audio-transcribing" class="nk-nav-link"> Call Recordings with Audio Transcribing </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/sms-and-bulk-sms" class="nk-nav-link"> SMS and Bulk SMS </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/flexible-payment-methods-including-all-cryptocurrencies" class="nk-nav-link"> Flexible Payment Methods </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/unlimited-agents-sip-accounts-for-free" class="nk-nav-link"> Unlimited Agents &amp; SIP Accounts - For Free </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/247-dedicated-support" class="nk-nav-link"> 24/7 Dedicated Support </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/fully-automated-self-service-portal" class="nk-nav-link"> Fully Automated &amp; Self-Service Portal </a>
+</li><li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/number-lookup" class="nk-nav-link"> Number Lookup </a>
+</li>	<li class="col-lg-4 p-0">
+<a href="https://illyvoip.com/features/" class="nk-nav-link"> See all features </a>
+</li>
+</ul>
+</li>
+<li class="nk-nav-item col-lg-4 nk-nav-media d-none d-lg-block">
+<a href="https://illyvoip.com/resources/help-center" target="_blank">
+<img loading="lazy" src="https://illyvoip.com/img/main/xhelpcenter.jpg.pagespeed.ic.O9e2bSfvdc.webp" alt="promo-banner" class="rounded-3" data-pagespeed-url-hash="796178258" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+</a>
+</li>
+</ul>
+</li>
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/pricing" class="nk-nav-link">
+<span class="nk-nav-text">Pricing</span>
+</a>
+</li>
+<li class="nk-nav-item has-sub">
+<a href="#" class="nk-nav-link nk-nav-toggle">
+<span class="nk-nav-text">Resources</span>
+</a>
+<ul class="nk-nav-sub">
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/resources/getting-started" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-home"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Getting Started</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Your First Steps</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/resources/help-center" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-help"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Help Center</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">All Questions Answered</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://blog.illyvoip.com" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-newspaper"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Blog</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Latest insights and updates</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/resources/developers" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-file-code"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Developers</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Tools and resources for developers</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://status.illyvoip.com" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-network"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Network Status</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Outages, scheduled maintenance, and general notices.</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</li>
+<li class="nk-nav-item has-sub">
+<a href="#" class="nk-nav-link nk-nav-toggle">
+<span class="nk-nav-text">Company</span>
+</a>
+<ul class="nk-nav-sub">
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/company/about-us" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-building"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">About Us</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Learn more about our story</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/company/careers" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-briefcase"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Careers</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Join our growing team</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/company/contact-us" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-support-fill"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Contact Us</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Reach us anytime!</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="nk-nav-item">
+<a href="https://illyvoip.com/company/legal" class="nk-nav-link">
+<div class="media-group">
+<div class="text-primary me-3">
+<em class="icon ni ni-book-read"></em>
+</div>
+<div class="media-text d-flex align-items-center sm">
+<div>
+<h2 class="lead-text fs-14 text-capitalize m-0">Legal</h2>
+<span class="sub-text text-nowrap text-capitalize m-0">Read our policies and terms</span>
+</div>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</li>
+<div class="nk-navbar-btn d-lg-none">
+<ul class="nk-btn-group sm justify-content-center">
+<li class="w-100">
+<a href="https://illyvoip.com/my/" target="_blank" class="btn btn-primary w-100">
+<em class="icon ni ni-user-fill"></em>
+<span>Account Portal</span>
+</a>
+</li>
+</ul>
+</div>
+</ul></div>
+</nav>
+<div class="nk-header-action">
+<ul class="nk-btn-group sm justify-content-center">
+<li class="d-none d-md-block">
+<a href="https://illyvoip.com/my/" class="btn btn-outline-dark">
+<em class="icon ni ni-user-fill"></em>
+<span>Account Portal</span>
+</a>
+</li>
+<li class="nk-navbar-toggle">
+<button class="btn  btn-outline-dark navbar-toggle rounded-1 h-100 p-2">
+<em class="icon ni ni-menu"></em>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="nk-pages">
+<section class="nk-section pt-120 pt-lg-180">
+<div class="nk-mask blur-1 left top"></div>
+<div class="nk-mask blur-1 right bottom"></div>
+<div class="container">
+<div class="nk-section-head">
+<nav>
+<ol class="breadcrumb mb-3 mb-md-4">
+<li class="breadcrumb-item">
+<a href="https://illyvoip.com/resources/help-center">Help Center</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://illyvoip.com/resources/help-center/general-illyvoip">General - ILLYVOIP Portal &amp; Accounts </a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">
+<a href="https://illyvoip.com/resources/help-center/faq">FAQs &amp; General Information</a>
+</li>
+</ol>
+</nav>
+<h2 class="nk-section-title">What is SIP Account &amp; Trunk</h2>
+<small class="text-muted">Written by Rexhep Arifaj | March 7, 2025</small>
+<hr class="mt-5 mb-0">
+</div>
+<div class="row">
+<div class="col-lg-3">
+<div class="nk-entry-sidebar">
+<ul class="nk-list-link nk-list-link-collapse flush">
+<li class="align-items-start">
+<a href="#did" class="nk-list-link-collapse-link fs-16 gap-2" data-bs-toggle="collapse" aria-expanded="false">
+<span>DID Numbers order &amp; configuring</span>
+<em class="on icon ni ni-plus"></em>
+<em class="off icon ni ni-minus"></em>
+</a>
+<div class="collapse " id="did">
+<ul class="nk-list-dot nk-list-dot-sm pt-2">
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-buy-did-number">
+How to order a DID Number and start making calls </a>
+</li>
+</ul>
+</div>
+</li>
+<li class="align-items-start">
+<a href="#e-sim" class="nk-list-link-collapse-link fs-16 gap-2" data-bs-toggle="collapse" aria-expanded="false">
+<span>E-SIM Support &amp; Setup</span>
+<em class="on icon ni ni-plus"></em>
+<em class="off icon ni ni-minus"></em>
+</a>
+<div class="collapse " id="e-sim">
+<ul class="nk-list-dot nk-list-dot-sm pt-2">
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/esim-compatible-phones">
+Guide to eSIM-Compatible Phones </a>
+</li>
+</ul>
+</div>
+</li>
+<li class="align-items-start">
+<a href="#finances-billing-and-account-management" class="nk-list-link-collapse-link fs-16 gap-2" data-bs-toggle="collapse" aria-expanded="false">
+<span>Finances, Billing &amp; Account Management</span>
+<em class="on icon ni ni-plus"></em>
+<em class="off icon ni ni-minus"></em>
+</a>
+<div class="collapse " id="finances-billing-and-account-management">
+<ul class="nk-list-dot nk-list-dot-sm pt-2">
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/billing-and-payment-options-on-illyvoip">
+Billing and Payment Options on ILLYVOIP </a>
+</li>
+</ul>
+</div>
+</li>
+<li class="align-items-start">
+<a href="#general-illyvoip" class="nk-list-link-collapse-link fs-16 gap-2" data-bs-toggle="collapse" aria-expanded="true">
+<span>General - ILLYVOIP Portal &amp; Accounts </span>
+<em class="on icon ni ni-plus"></em>
+<em class="off icon ni ni-minus"></em>
+</a>
+<div class="collapse show" id="general-illyvoip">
+<ul class="nk-list-dot nk-list-dot-sm pt-2">
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-check-rates-and-understand-how-to-use-routing-plans">
+How to check rates and understand how to use routing plans </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-apply-for-test-credit">
+How to contact Support and request test credit </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-sign-up-for-a-illyvoip-account">
+How to create an IllyVoIP account </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-create-sip-account">
+How to create SIP &amp; Agents accounts </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-reset-your-password">
+How to Reset Your Password </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/sip-response-codes">
+SIP response codes </a>
+</li>
+</ul>
+</div>
+</li>
+<li class="align-items-start">
+<a href="#sip-trunking-configuration" class="nk-list-link-collapse-link fs-16 gap-2" data-bs-toggle="collapse" aria-expanded="false">
+<span>ILLYVOIP SIP Trunking Configurations</span>
+<em class="on icon ni ni-plus"></em>
+<em class="off icon ni ni-minus"></em>
+</a>
+<div class="collapse " id="sip-trunking-configuration">
+<ul class="nk-list-dot nk-list-dot-sm pt-2">
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-configure-microsip">
+How to configure MicroSIP </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-setup-zoiper5">
+How to configure Zoiper 5 </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-install-and-use-x-lite">
+How to install and use X-Lite </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-install-and-use-zoiper-3-with-illyvoip">
+How to install and use Zoiper 3 with ILLYVOIP </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/how-to-set-up-3cx-with-illyvoip">
+How to Set Up 3CX with Illyvoip </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/magnusbilling">
+How to set up MagnusBilling with ILLYVOIP </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/Zoiper-mobile">
+How to setup Zoiper on Mobile </a>
+</li>
+<li class="nk-list-dot-item align-items-start">
+<a href="https://illyvoip.com/resources/help-center/article/test">
+test </a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-9">
+<div class="nk-entry-wrap pt-3 pslg-5">
+<div class="nk-entry">
+<h1 style="font-size:32px; margin-bottom:30px; text-align:left;">
+<strong>Understanding SIP Accounts, SIP Trunks, and SIP Users on <a href="https://illyvoip.com" target="_blank">ILLYVOIP</a></strong></h1>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>What is SIP and How Does It Work?</strong>
+<br>
+<img src="https://illyvoip.com/uploads/help-center/x1741351708_what_is_sip.png.pagespeed.ic.KO9bamw2QN.webp" alt="What is SIP" style="width:100%; max-width:800px; border:1px solid #ccc; border-radius:5px; display:block; margin:20px auto;" data-pagespeed-url-hash="94078811" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+</h2>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+SIP (<strong>Session Initiation Protocol</strong>) is a communication protocol used to establish and manage
+<strong>voice and video calls over the internet</strong>. It is the technology behind
+<strong>VoIP (Voice over IP)</strong> services, allowing users to make calls without traditional phone lines.
+</p>
+<h3 style="font-size:20px; margin-bottom:15px; text-align:left;">
+<strong>How SIP Works</strong>
+</h3>
+<ol style="font-size:16px; margin-left:25px; margin-bottom:20px; line-height:1.6;">
+<li style="margin-bottom:10px;">
+<strong>Call Initiation</strong> – When a user dials a number using a <strong>SIP softphone, IP phone, or PBX</strong>,
+the <strong>SIP protocol</strong> sends a request to establish the call.
+</li>
+<li style="margin-bottom:10px;">
+<strong>Session Establishment</strong> – SIP finds the recipient’s address (SIP URI or phone number)
+and connects both parties.
+</li>
+<li style="margin-bottom:10px;">
+<strong>Call Management</strong> – During the call, SIP manages features like
+<strong>call transfer, hold, or conference calls</strong>.
+</li>
+<li style="margin-bottom:10px;">
+<strong>Call Termination</strong> – When the call ends, SIP ensures both ends disconnect properly.
+</li>
+</ol>
+<h3 style="font-size:20px; margin-bottom:15px; text-align:left;">
+<strong>Key Features of SIP</strong>
+</h3>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+&nbsp;Works over <strong>any internet connection</strong><br>
+&nbsp;Supports <strong>voice, video, and messaging</strong><br>
+&nbsp;Allows <strong>multiple users and devices</strong> to connect under one account<br>
+&nbsp;Can be used with <strong>PBX systems, softphones, and SIP trunks</strong>
+</p>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>What is a SIP Account?</strong>
+</h2>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+A <strong>SIP account</strong> is an internet-based phone system that allows you to make and receive VoIP calls
+using softphones, <code>IP phones</code>, or <code>PBX systems</code>. It acts as your unique ID in the VoIP network, connecting you to
+the telephony system.
+</p>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+When you sign up on <strong>IllyVoIP</strong>, a <strong>SIP user</strong> is automatically generated for your
+account, allowing you to start using VoIP services right away.
+</p>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>What is a SIP Trunk?</strong>
+</h2>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+A <strong>SIP trunk</strong> is a virtual phone line that connects your SIP account to the public telephone
+network (PSTN) or other VoIP providers. Unlike traditional phone lines, SIP trunks allow you to handle
+multiple calls at once and scale easily.
+</p>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+IllyVoIP provides <strong>SIP trunking services</strong>, which means you can connect your PBX system and
+route calls efficiently while saving costs.
+</p>
+<h3 style="font-size:20px; margin-bottom:15px; text-align:left;">
+<strong>Difference Between SIP Account and SIP Trunk</strong>
+</h3>
+<ul style="font-size:16px; margin-left:25px; margin-bottom:20px; list-style:disc;">
+<li style="margin-bottom:10px;">
+A <strong>SIP Account</strong> is a single user ID that allows you to register on a softphone, IP phone, or PBX.
+</li>
+<li style="margin-bottom:10px;">
+A <strong>SIP Trunk</strong> is a connection that allows multiple SIP accounts or extensions to make
+and receive calls through a VoIP provider.
+</li>
+</ul>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>What is a SIP User?</strong>
+</h2>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+A <strong>SIP user</strong> is the unique login credential (username and password) associated with your
+<strong>SIP account</strong>. This user ID is required to authenticate and register on
+<strong>softphones, IP phones, or PBX systems</strong>.
+</p>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+On <a href="https://illyvoip.com" target="_blank">IllyVoIP</a>, every account automatically comes with a <strong>default SIP user</strong>, but you can also
+create multiple SIP users for different purposes, such as:
+</p>
+<ul style="font-size:16px; margin-left:25px; margin-bottom:20px; list-style:disc;">
+<li style="margin-bottom:10px;">
+<strong>For employees or agents</strong> (each user can have a separate SIP login).
+</li>
+<li style="margin-bottom:10px;">
+<strong>For different devices</strong> (using one account on multiple devices).
+</li>
+<li style="margin-bottom:10px;">
+<strong>For PBX integration</strong> (connecting to external VoIP systems).
+</li>
+</ul>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>How to Get a SIP Account on IllyVoIP?</strong>
+</h2>
+<ol style="font-size:16px; margin-left:25px; margin-bottom:20px; line-height:1.6;">
+<li style="margin-bottom:10px;">
+<strong>Sign up for an account</strong> on <a href="https://illyvoip.com/my/" target="_blank">IllyVoIP</a>.
+</li>
+<li style="margin-bottom:10px;">
+Once registered, a <strong>SIP user</strong> is automatically created for you.
+</li>
+<li style="margin-bottom:10px;">
+You can find your <strong><code>SIP Username, Password</code>, and <code>Server </code> details</strong> in the
+<strong>SIP Accounts</strong> section of your dashboard.
+</li>
+<li style="margin-bottom:10px;">
+Use these details to configure your <strong><code>Softphone</code>,<code> IP phone </code>, or <code>PBX System</code></strong>.
+</li>
+</ol>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>How to Use a SIP Account?</strong>
+</h2>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+Once you have your SIP credentials, you can:
+</p>
+<ul style="font-size:16px; margin-left:25px; margin-bottom:20px; list-style:disc;">
+<li style="margin-bottom:10px;">
+Configure it on a <strong>softphone</strong> like Zoiper, X-Lite, or MicroSIP.
+</li>
+<li style="margin-bottom:10px;">
+Set it up on an <strong>IP phone</strong> for office use.
+</li>
+<li style="margin-bottom:10px;">
+Integrate it with a <strong>PBX system</strong> like 3CX, Asterisk, or FreePBX.
+</li>
+<li style="margin-bottom:10px;">
+Use it for <strong>SIP trunking</strong> and call forwarding.
+</li>
+</ul>
+<h2 style="font-size:26px; margin-bottom:20px; text-align:left;">
+<strong>Conclusion</strong>
+</h2>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+SIP is the <strong>backbone of VoIP communication</strong>, allowing you to make calls over the internet
+without the need for traditional phone lines. A <strong>SIP account</strong> lets you connect to VoIP services,
+while <strong>SIP trunks</strong> handle multiple calls efficiently.
+</p>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+On <a href="https://illyvoip.com" target="_blank">IllyVoIP</a>, every user gets a <strong>SIP account with an auto-generated SIP user</strong>, making it easy
+to set up and start using VoIP services immediately.
+</p>
+<p style="font-size:16px; text-align:justify; margin-bottom:20px;">
+For more details, check our guides on:
+</p><p><a href="https://illyvoip.com/resources/help-center/sip-trunking-configuration" target="_blank"></a></p><ul style="font-size:16px; margin-left:25px; margin-bottom:20px; list-style:disc;"><a href="https://illyvoip.com/resources/help-center/sip-trunking-configuration" target="_blank"> </a><li style="margin-bottom:10px;"><a href="https://illyvoip.com/resources/help-center/sip-trunking-configuration" target="_blank">How to Set Up a SIP Account</a>s on Softphone or PBX systems</li><a href="https://illyvoip.com/resources/help-center/sip-trunking-configuration" target="_blank">
+</a></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="nk-section">
+<div class="container">
+<div class="nk-cta-wrap bg-primary-gradient rounded-3 is-theme p-5 p-lg-7 aos-init" data-aos="fade-up" data-aos-delay="100">
+<div class="row g-gs align-items-center">
+<div class="col-lg-8">
+<div class="media-group flex-column flex-lg-row align-items-center">
+<div class="media media-lg media-circle media-middle text-bg-white text-primary mb-2 mb-lg-0 me-lg-2">
+<em class="icon ni ni-chat-fill"></em>
+</div>
+<div class="text-center text-lg-start ms-lg-3">
+<h3 class="text-capitalize m-0">We’re Here for You</h3>
+<p class="fs-16">Experience unparalleled support with our dedicated team of experts. Whether it’s day or night, our knowledgeable and responsive support heroes are ready to assist you whenever you need help.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 text-center text-lg-end">
+<a href="https://illyvoip.com/resources/contact-us" class="btn btn-white">Contact Us</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="nk-section nk-section-nwsletter pb-0 pt-7 pt-lg-120">
+<div class="container">
+<div class="row justify-content-center justify-content-lg-between align-items-center pb-5 border-bottom border-gray-50">
+<div class="col-lg-6 col-xl-4">
+<div class="nk-newsletter-content text-center text-lg-start pb-5 pb-lg-0">
+<h4 class="text-capitalize">Subscribe to our newsletter</h4>
+<p class="fs-16">Join our mailing list to receive latest news and exclusive offers.</p>
+</div>
+</div>
+<div class="col-md-10 col-lg-6 col-xl-5">
+<form action="https://mailing.illyvoip.com/index.php/lists/sf278qldlo31f/subscribe" name="mc-embedded-subscribe-form" target="_blank" method="post">
+<div class="form-group nk-newsletter-one row">
+<div class="col-md-8">
+<div class="form-control-wrap mb-4 mb-md-0">
+<input type="email" name="EMAIL" class="form-control text-base border-dark " placeholder="Please enter your e-mail address" required="">
+</div>
+</div>
+<div class="col-md-4 ps-md-0">
+<input type="submit" class="btn btn-primary btn-block h-100" value="Subscribe">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section> </main>
+<footer class="nk-footer">
+<div class="nk-footer-top">
+<div class="container">
+<div class="nk-footer-content row justify-content-xl-between">
+<div class="col-md-8 col-lg-4 col-xxl-4">
+<div class="nk-footer-brand pb-5 pb-lg-0">
+<div class="nk-footer-brand-info mb-4">
+<div class="nk-footer-logo">
+<a href="https://illyvoip.com/" class="logo-link">
+<div class="logo-wrap">
+<img class="logo-img" src="data:image/webp;base64,UklGRnACAABXRUJQVlA4TGMCAAAvmsAJEF8QEYraNmJTpXB7fy9AOUT8d06QbFvbMTlvuWLbtu3kDmoUG238o6g5im3bGZVxLu97v6//r1ZrGNF/B27bRpLmnkm7ztHsH2TwbVu2bYsOJqV5SMriO3eOK7sB8FPqp2kztCq70QieleFgkFRfnRERGQRcutW4QgbYjlxtWun5+jx0KTk1KFl5KUNMJv8C2O1Qmid9oQY0+zEZMMnIQFcOxojIZHgv8gO1zXTRWgVgjd+wsg5EP+wLYJ92qNXYqe19xIG1/Y96kYO5Imam9GEd7QDmSQFrSw8Mc70I4JSIlCAhVf5HlEOpyTXg7h+g1YGtpMuLzfBeWb63TM24WACsEvkJ/yMWDiXEvNZgBWI6R5KFlEiV9/JFu764ZmwtVBlPrkLKi4LJSb9KQwDrZLFRU9BlJUVIO0hbssd68QTWqRyJFnLeWNol/wXGOYiLWDJ9MBVufi8qetQTSEnJykq/m4iIyHnY59e7qvyfUtMVUoJozthWwiF1QEs/qqUZw2SZ9xL2FK0PX+GtlewAxtZoFffrsQ4SdXitvcSSuBm6jKXkLbdK9R8mi0GvHJU7ICXuOk9Y2Ep861zMLHaDLRpiOk6rRX6FXINRqUAyPDlXC/lqhUf3h0qI/lDBTOtJP46oBVZ4tGgV7hC9a44vm7GqTuXOWIqjr3ZJuL7qh+g1Yxla4XmG2pIhWCO+ZJwLoWi1AZFXqHw7aagBJ8RB2O0JpEPJudjQMN1SYZlubmhYKb6b9d/ou1nmddgyDa/hvgwW1MysG2QkBxddMqh4HxcZRCYNYWYJW6cxGdybAAA=" srcset="https://illyvoip.com/img/brandid/logos/xlogo-2x.png.pagespeed.ic.gWXNN3mHja.webp 2x" alt="brand-logo" data-pagespeed-url-hash="3493387055" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+</div>
+</a>
+</div>
+<p>We believe that communication should be easy, efficient, and effective. Specializing in advanced voice services, global phone numbers, SMS solutions, and Global Data connectivity.</p>
+</div>
+<ul class="nk-footer-social">
+<li>
+<a href="https://www.facebook.com/illyvoip/">
+<em style="color:white;" class="icon ni ni-facebook-f"></em>
+</a>
+</li>
+<li>
+<a href="https://x.com/illyvoip">
+<em style="color:white;" class="icon ni ni-twitter"></em>
+</a>
+</li>
+<li>
+<a href="https://www.linkedin.com/company/illyvoip">
+<em style="color:white;" class="icon ni ni-linkedin"></em>
+</a>
+</li>
+<li>
+<a href="https://t.me/illyvoip">
+<em style="color:white;" class="icon ni ni-telegram"></em>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-8 col-xxl-6">
+<div class="row justify-content-between">
+<div class="col-sm-8 col-md-7">
+<div class="nk-footer-info">
+<h5 class="title">Quick Links</h5>
+<ul class="row gy-1 gy-sm-4">
+<li class="col-6">
+<a href="https://illyvoip.com/voice-termination">Voice Termination</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/phone-numbers">Phone Numbers</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/toll-free-numbers">Toll Free Numbers</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/sms-messaging">SMS Messaging</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/global-data-services">Global Data Services</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/pricing">Pricing</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/solutions">Solutions</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/features">Features</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/resources/getting-started">Getting Started</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/resources/help-center">Help Center</a>
+</li>
+<li class="col-6">
+<a href="https://blog.illyvoip.com">Blog</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/resources/developers">Developers</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/resources/network">Network</a>
+</li>
+<li class="col-6">
+<a href="https://illyvoip.com/resources/contact-us">Contact Us</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="nk-footer-info">
+<h5 class="title">Company</h5>
+<ul class="row gy-1 gy-sm-4">
+<li class="col-12">
+<a href="https://illyvoip.com/company/about-us">About Us</a>
+</li>
+<li class="col-12">
+<a href="https://illyvoip.com/company/careers">Careers</a>
+</li>
+<li class="col-12">
+<a href="https://illyvoip.com/company/legal">Legal</a>
+</li>
+<li class="col-12">
+<a href="https://illyvoip.com/company/legal/terms-and-conditions">Terms and Conditions</a>
+</li>
+<li class="col-12">
+<a href="https://illyvoip.com/company/legal/privacy-policy">Privacy Policy</a>
+</li>
+<li class="col-12">
+<a href="https://illyvoip.com/company/legal/acceptable-usage-policy">Acceptable Usage Policy</a>
+</li>
+<li class="col-12">
+<a href="https://illyvoip.com/company/legal/impressum">Impressum</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="nk-footer-bottom">
+<div class="container">
+<div class="nk-footer-content row justify-content-between align-items-center">
+<div class="col-lg-6 px-0">
+<p class="nk-footer-copyright-text text-center text-lg-start">© <span id="currentYear">2026</span>
+<a class="fs-16" href="https://illyvoip.com/" target="_blank"> IllyVoIP LLC</a>. All Rights Reserved.
+</p>
+<small>
+IllyVoIP LLC is a registered entity in the Republic of Kosovo, business number: 812169854 (D-U-N-S® 969999000). We adhere to all applicable laws and regulations of the Republic of Kosovo. For additional details, please visit the Kosovo Business Registration Agency (KBRA): https://arbk.rks-gov.net
+</small>
+</div>
+<div class="col-lg-6 px-0 d-flex justify-content-center justify-content-lg-end">
+<div class="nk-footer-contact text-center text-lg-end">
+<ul class="d-flex justify-content-center justify-content-lg-end align-items-center mb-1">
+<li class="me-3">
+<img style="width: 15px; vertical-align: baseline;" src="data:image/webp;base64,UklGRnwBAABXRUJQVlA4TG8BAAAvDoADEO/iIJJsNZoweUH/GhIbOWaGOTDhNpJsJxo0LkUaWOQfg8pDWZq7N44j2VaqwdlBJOQfBxGwdtcvwyCSJCf9Qca/RHKUADrBx1VhdnURvJHgC23L0bjXNu8iHEp5lqv43EEZGpbmOf1PtzkJlZJAAiCQpPifCAGECEmKt38IMZAkQAlQCgHq+fsRoAQqhAihErxDQKBJJTD0ij9DIgMgAUKkQqgEKkMCleodQtVtXIMyFBBY6EoepLguhiiPXLu2nf8Xs/Wajuu9x8ern/Hnu/P2vqlkSfaXZd7gMAAAI7psu7dt27a9/yRfK0T0P/eH8zSxDK1Dm9Djddse4xVvR+/yI3GMIwh1qobavpE8E+b85ff7DgIpT8ksKzWjxmAY1oolw5lINpyLFmgURfNFf8PbVvvaULt+Pp9VvOkdWlN+zi8IAEC6HuzZE2nBLdn78/mEnSAAwMcNdcPcvj/nL4k4U7vb6/3/um0BAA==" data-pagespeed-url-hash="1046816715" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+<a href="tel:+18776952209">+1 877 695 2209</a>
+</li>
+<li>
+<img style="width: 15px; vertical-align: baseline;" src="data:image/webp;base64,UklGRhQBAABXRUJQVlA4TAgBAAAvDoADEC/BNrKtVA+XjCGk/16IfyHuct9rg3Ek2Ur2uxsnUuFI5GTlsmwjSWqEhgwIhvxdosDDEq/FHIJIUrKAKaSmMayJNYz//T//eOUD/IFgAAQDIAhC7Y631rA17/URMJMcPR+LgCfr2vu3G+9hfTb9qEC8fF3/hSD27yAQZSm0VJNTahJKnb6TW74ETUutzX2BYQCARVZjNmb//2N8IaL/Ctu2bezspPOM7I22NVe8ttr47LX+gNa+T59IEyq66B5wYdzOfS5B21xohvVYEGUYwkooURFGIOQ3hVRS8Jvqj78GQsLIowwhZhQtxzo8lrWgnPdzG8PrvbEr0PTzG/3vX/39ZAY=" data-pagespeed-url-hash="2027955544" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+<a href="tel:+442037695545">+44 203 7695545</a>
+</li>
+</ul>
+<hr>
+<p style="float:right;" class="nk-footer-copyright mb-1">
+<a href="#" class="language-toggle" onclick="if (!window.__cfRLUnblockHandlers) return false; openLanguagePopup()">Site Language</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="languagePopup" class="language-popup" style="display: none;">
+<div class="language-popup-content">
+<span class="close-popup" onclick="if (!window.__cfRLUnblockHandlers) return false; closeLanguagePopup()">×</span>
+<h3>Select Language</h3>
+<ul class="language-list">
+<li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('en')">English</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('es')">Spanish</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('fr')">French</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('de')">German</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('zh')">Chinese (Simplified)</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('ja')">Japanese</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('pt')">Portuguese</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('hi')">Hindi</a></li><li><a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; changeLanguage('it')">Italian</a></li> </ul>
+</div>
+</div>
+<a href="#" class="scroll-top shadow animate animate-infinite animate-pulse animate-duration-2">
+<em class="icon ni ni-chevrons-up"></em>
+</a>
+</div>
+</div>
+<style>.language-toggle{text-decoration:none;font-size:14px;padding:5px 10px;border:1px solid #e5e5e5;border-radius:4px;transition:background-color .3s}.language-toggle:hover{background-color:#f5f5f5;color:#333}.language-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;z-index:1000}.language-popup-content{background:#fff;padding:20px;border-radius:8px;width:300px;max-width:90%;position:relative;box-shadow:0 4px 8px rgba(0,0,0,.2)}.close-popup{position:absolute;top:10px;right:15px;font-size:24px;cursor:pointer;color:#333}.language-list{list-style:none;padding:0;margin:20px 0 0}.language-list li{margin:10px 0}.language-list li a{text-decoration:none;color:#333;font-size:16px;display:block;padding:8px;border-radius:4px}.language-list li a:hover{background:#f0f0f0}.language-list li.selected a{background:#e5e5e5;font-weight:bold}</style>
+<script type="text/javascript">function changeLanguage(lang){window.location.href='https://illyvoip.com/?lang='+lang;closeLanguagePopup();}function openLanguagePopup(){document.getElementById('languagePopup').style.display='flex';}function closeLanguagePopup(){document.getElementById('languagePopup').style.display='none';}document.addEventListener('click',function(event){const popup=document.getElementById('languagePopup');const popupContent=document.querySelector('.language-popup-content');if(popup.style.display==='flex'&&!popupContent.contains(event.target)&&!event.target.classList.contains('language-toggle')){closeLanguagePopup();}});</script>
+</footer>
+<div class="nk-sticky-badge">
+<ul>
+<li>
+<a href="https://t.me/illyvoip_support_bot" target="_blank" class="nk-sticky-badge-icon nk-sticky-badge-telegram" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="nk-tooltip" data-bs-title="Telegram Support">
+<em class="icon ni ni-telegram"></em>
+</a>
+</li>
+<li>
+<a href="https://wa.me/38349537999" target="_blank" class="nk-sticky-badge-icon nk-sticky-badge-whatsapp" data-bs-toggle="tooltip" data-bs-custom-class="nk-tooltip" data-bs-title="Whatsapp Support" aria-label="Whatsapp Support">
+<em class="icon ni ni-whatsapp"></em>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript" src="https://illyvoip.com/assets/js/bundle.js?v1.0.0"></script>
+<script type="text/javascript" src="https://illyvoip.com/assets/js/scripts.js?v1.0.0"></script>
+<style>:root{--ivy-green:#1fa37b;--ivy-dark:#1a1a1a;--ivy-muted:#8a8f8d}#ivy-launcher{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--ivy-green);box-shadow:0 6px 18px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:2147483000}#ivy-launcher svg{width:26px;height:26px;fill:#fff}#ivy-popup{position:fixed;right:22px;bottom:90px;width:320px;max-width:calc(100vw - 40px);background:#fff;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.22);padding:16px;color:var(--ivy-dark);font-family:system-ui,-apple-system,Segoe\ UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;z-index:2147483000;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .08s linear , transform .08s ease-out}#ivy-popup:target{opacity:1;transform:translateY(0);pointer-events:auto}#ivy-popup h3{margin:0 0 6px;font-size:16px;font-weight:700}#ivy-popup p{margin:6px 0 12px;font-size:14px;line-height:1.45}#ivy-popup .hours{background:#f3f6f5;border-radius:8px;padding:8px 10px;font-size:13px}#ivy-popup .actions{display:flex;gap:8px;margin-top:12px}#ivy-popup .btn{flex:1;text-align:center;border-radius:8px;padding:10px 12px;font-size:14px;text-decoration:none;border:1px solid #dfe5e3}#ivy-popup .btn.primary{background:var(--ivy-green);color:#fff;border-color:var(--ivy-green)}#ivy-close{position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;text-decoration:none;color:var(--ivy-muted);font-size:16px;line-height:28px;text-align:center}.woot-widget-holder,.woot-widget-bubble{display:none!important}</style>
+<a id="ivy-launcher" href="#ivy-popup" aria-label="Open chat">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM6 9h12v2H6V9zm0 4h8v2H6v-2z"></path>
+</svg>
+</a>
+<div id="ivy-popup" role="dialog" aria-modal="true" aria-labelledby="ivy-title">
+<a id="ivy-close" href="#" aria-label="Close">✕</a>
+<h3 id="ivy-title">IllyVoIP Support</h3>
+<p>
+Our live chat is available on <strong>weekdays</strong> from
+<strong>09:00–17:00</strong>.
+</p>
+<div class="hours">
+<strong>Current office time:</strong>
+Fri, 17 Apr 2026 07:07 </div>
+<p style="margin-top:10px;">
+Meanwhile, reach us via WhatsApp or open a support ticket:
+</p>
+<div class="actions">
+<a class="btn primary" href="https://wa.me/38349537999" target="_blank" rel="noopener">
+WhatsApp
+</a>
+<a class="btn" href="https://illyvoip.com/my/support.php" target="_blank" rel="noopener">
+Create Ticket
+</a>
+</div>
+</div>
+<script data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[
+(function(){function f(b){var a=window;if(a.addEventListener)a.addEventListener("load",b,!1);else if(a.attachEvent)a.attachEvent("onload",b);else{var c=a.onload;a.onload=function(){b.call(this);c&&c.call(this)}}};window.pagespeed=window.pagespeed||{};var k=window.pagespeed;function l(b,a,c,g,h){this.h=b;this.i=a;this.l=c;this.j=g;this.b=h;this.c=[];this.a=0}l.prototype.f=function(b){for(var a=0;250>a&&this.a<this.b.length;++a,++this.a)try{document.querySelector(this.b[this.a])&&this.c.push(this.b[this.a])}catch(c){}this.a<this.b.length?window.setTimeout(this.f.bind(this),0,b):b()};
+k.g=function(b,a,c,g,h){if(document.querySelector&&Function.prototype.bind){var d=new l(b,a,c,g,h);f(function(){window.setTimeout(function(){d.f(function(){for(var a="oh="+d.l+"&n="+d.j,a=a+"&cs=",b=0;b<d.c.length;++b){var c=0<b?",":"",c=c+encodeURIComponent(d.c[b]);if(131072<a.length+c.length)break;a+=c}k.criticalCssBeaconData=a;var b=d.h,c=d.i,e;if(window.XMLHttpRequest)e=new XMLHttpRequest;else if(window.ActiveXObject)try{e=new ActiveXObject("Msxml2.XMLHTTP")}catch(m){try{e=new ActiveXObject("Microsoft.XMLHTTP")}catch(n){}}e&&
+(e.open("POST",b+(-1==b.indexOf("?")?"?":"&")+"url="+encodeURIComponent(c)),e.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),e.send(a))})},0)})}};k.criticalCssBeaconInit=k.g;})();
+pagespeed.selectors=["#ivy-close","#ivy-launcher","#ivy-launcher svg","#ivy-popup","#ivy-popup .actions","#ivy-popup .btn","#ivy-popup .btn.primary","#ivy-popup .hours","#ivy-popup h3","#ivy-popup p",".close-popup",".language-list",".language-list li",".language-list li a",".language-list li.selected a",".language-popup",".language-popup-content",".language-toggle",".woot-widget-bubble",".woot-widget-holder"];pagespeed.criticalCssBeaconInit('/mod_pagespeed_beacon','https://illyvoip.com/resources/help-center/article/sip-account-trunk?lang=pt','BWXPG7VGiV','9ORUphp0wQY',pagespeed.selectors);
+//]]></script><noscript class="psa_add_styles"><link rel="stylesheet" href="https://illyvoip.com/assets/css/styles/main.css?v1.0.0"><style>.language-toggle{text-decoration:none;font-size:14px;padding:5px 10px;border:1px solid #e5e5e5;border-radius:4px;transition:background-color .3s}.language-toggle:hover{background-color:#f5f5f5;color:#333}.language-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;z-index:1000}.language-popup-content{background:#fff;padding:20px;border-radius:8px;width:300px;max-width:90%;position:relative;box-shadow:0 4px 8px rgba(0,0,0,.2)}.close-popup{position:absolute;top:10px;right:15px;font-size:24px;cursor:pointer;color:#333}.language-list{list-style:none;padding:0;margin:20px 0 0}.language-list li{margin:10px 0}.language-list li a{text-decoration:none;color:#333;font-size:16px;display:block;padding:8px;border-radius:4px}.language-list li a:hover{background:#f0f0f0}.language-list li.selected a{background:#e5e5e5;font-weight:bold}</style><style>:root{--ivy-green:#1fa37b;--ivy-dark:#1a1a1a;--ivy-muted:#8a8f8d}#ivy-launcher{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--ivy-green);box-shadow:0 6px 18px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:2147483000}#ivy-launcher svg{width:26px;height:26px;fill:#fff}#ivy-popup{position:fixed;right:22px;bottom:90px;width:320px;max-width:calc(100vw - 40px);background:#fff;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.22);padding:16px;color:var(--ivy-dark);font-family:system-ui,-apple-system,Segoe\ UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;z-index:2147483000;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .08s linear , transform .08s ease-out}#ivy-popup:target{opacity:1;transform:translateY(0);pointer-events:auto}#ivy-popup h3{margin:0 0 6px;font-size:16px;font-weight:700}#ivy-popup p{margin:6px 0 12px;font-size:14px;line-height:1.45}#ivy-popup .hours{background:#f3f6f5;border-radius:8px;padding:8px 10px;font-size:13px}#ivy-popup .actions{display:flex;gap:8px;margin-top:12px}#ivy-popup .btn{flex:1;text-align:center;border-radius:8px;padding:10px 12px;font-size:14px;text-decoration:none;border:1px solid #dfe5e3}#ivy-popup .btn.primary{background:var(--ivy-green);color:#fff;border-color:var(--ivy-green)}#ivy-close{position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;text-decoration:none;color:var(--ivy-muted);font-size:16px;line-height:28px;text-align:center}.woot-widget-holder,.woot-widget-bubble{display:none!important}</style></noscript><script data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[
+(function(){function b(){var a=window,c=e;if(a.addEventListener)a.addEventListener("load",c,!1);else if(a.attachEvent)a.attachEvent("onload",c);else{var d=a.onload;a.onload=function(){c.call(this);d&&d.call(this)}}};var f=!1;function e(){if(!f){f=!0;for(var a=document.getElementsByClassName("psa_add_styles"),c=0,d;d=a[c];++c)if("NOSCRIPT"==d.nodeName){var k=document.createElement("div");k.innerHTML=d.textContent;document.body.appendChild(k)}}}function g(){var a=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||null;a?a(function(){window.setTimeout(e,0)}):b()}
+var h=["pagespeed","CriticalCssLoader","Run"],l=this;h[0]in l||!l.execScript||l.execScript("var "+h[0]);for(var m;h.length&&(m=h.shift());)h.length||void 0===g?l[m]?l=l[m]:l=l[m]={}:l[m]=g;})();
+pagespeed.CriticalCssLoader.Run();
+//]]></script><script type="text/javascript" src="/pagespeed_static/js_defer.I4cHjq6EEP.js"></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f4db16b15fda40a49d3647cebb67dba0&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<div><link rel="stylesheet" href="https://illyvoip.com/assets/css/styles/main.css?v1.0.0"><style>.language-toggle{text-decoration:none;font-size:14px;padding:5px 10px;border:1px solid #e5e5e5;border-radius:4px;transition:background-color .3s}.language-toggle:hover{background-color:#f5f5f5;color:#333}.language-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;z-index:1000}.language-popup-content{background:#fff;padding:20px;border-radius:8px;width:300px;max-width:90%;position:relative;box-shadow:0 4px 8px rgba(0,0,0,.2)}.close-popup{position:absolute;top:10px;right:15px;font-size:24px;cursor:pointer;color:#333}.language-list{list-style:none;padding:0;margin:20px 0 0}.language-list li{margin:10px 0}.language-list li a{text-decoration:none;color:#333;font-size:16px;display:block;padding:8px;border-radius:4px}.language-list li a:hover{background:#f0f0f0}.language-list li.selected a{background:#e5e5e5;font-weight:bold}</style><style>:root{--ivy-green:#1fa37b;--ivy-dark:#1a1a1a;--ivy-muted:#8a8f8d}#ivy-launcher{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--ivy-green);box-shadow:0 6px 18px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:2147483000}#ivy-launcher svg{width:26px;height:26px;fill:#fff}#ivy-popup{position:fixed;right:22px;bottom:90px;width:320px;max-width:calc(100vw - 40px);background:#fff;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.22);padding:16px;color:var(--ivy-dark);font-family:system-ui,-apple-system,Segoe\ UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;z-index:2147483000;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .08s linear , transform .08s ease-out}#ivy-popup:target{opacity:1;transform:translateY(0);pointer-events:auto}#ivy-popup h3{margin:0 0 6px;font-size:16px;font-weight:700}#ivy-popup p{margin:6px 0 12px;font-size:14px;line-height:1.45}#ivy-popup .hours{background:#f3f6f5;border-radius:8px;padding:8px 10px;font-size:13px}#ivy-popup .actions{display:flex;gap:8px;margin-top:12px}#ivy-popup .btn{flex:1;text-align:center;border-radius:8px;padding:10px 12px;font-size:14px;text-decoration:none;border:1px solid #dfe5e3}#ivy-popup .btn.primary{background:var(--ivy-green);color:#fff;border-color:var(--ivy-green)}#ivy-close{position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;text-decoration:none;color:var(--ivy-muted);font-size:16px;line-height:28px;text-align:center}.woot-widget-holder,.woot-widget-bubble{display:none!important}</style></div></body></html>

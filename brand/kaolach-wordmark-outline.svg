@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 232 52" fill="none">
+  <title>kaolach outline</title>
+  <desc>kaolach: filled mark; letters k a o l a c h as paths without system fonts.</desc>
+  <defs>
+    <linearGradient id="mk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#062a28"/>
+      <stop offset="50%" stop-color="#166b5f"/>
+      <stop offset="100%" stop-color="#3dd4b4"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(2,4)">
+    <rect width="42" height="42" rx="11" fill="url(#mk)"/>
+    <path d="M14 11v22M14 20.5L24.5 11M14 20.5L24.5 33" stroke="#f4fffc" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 36.5c4.5-2.8 9-2.8 13.5 0s9 2.8 13.5 0" stroke="#9cf3e0" stroke-width="2" stroke-linecap="round" opacity="0.92"/>
+  </g>
+  <g stroke="#0c1f2e" stroke-width="2.65" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M56 34V12M56 22L68 12M56 22L68 33"/>
+    <path d="M97 20.5A5.5 6 0 1 1 97 32.5A5.5 6 0 1 1 97 20.5"/>
+    <path d="M108 12v22"/>
+    <path d="M138 33.5A6.8 6.8 0 1 1 138 19.5"/>
+    <path d="M148 12v22M148 22a6 5.5 0 0 1 12 0v12"/>
+  </g>
+  <path fill="#0c1f2e" d="M71 33.5V25c0-4 3.2-6.5 7-6.5s7 2.6 7 6.5v8.5h-2.6v-2.2c-1.2 1.6-3 2.5-5.2 2.5-4 0-6.2-2.4-6.2-5.8zm13.5-1.2c0-2.5-2-4-4.5-4s-4.5 1.5-4.5 4 2 4 4.5 4c1.6 0 3-.7 3.8-2v-2z"/>
+  <path fill="#0c1f2e" transform="translate(44,0)" d="M71 33.5V25c0-4 3.2-6.5 7-6.5s7 2.6 7 6.5v8.5h-2.6v-2.2c-1.2 1.6-3 2.5-5.2 2.5-4 0-6.2-2.4-6.2-5.8zm13.5-1.2c0-2.5-2-4-4.5-4s-4.5 1.5-4.5 4 2 4 4.5 4c1.6 0 3-.7 3.8-2v-2z"/>
+  <circle cx="210" cy="15" r="3.1" fill="#2a9d8f"/>
+</svg>

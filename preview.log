@@ -1,0 +1,13 @@
+预览服务已启动:
+  监听       0.0.0.0:8787
+  本机访问   http://127.0.0.1:8787/
+  目录列表   http://127.0.0.1:8787/_catalog
+  未命中快照时回源: https://illyvoip.com（HTML 仍用本地快照）
+  公网访问请用: http://<服务器IP>:8787/ （HTML 内链按浏览器 Host 自动替换）
+预览服务已启动:
+  HTTP 监听  0.0.0.0:8787
+  本机访问   http://127.0.0.1:8787/
+  目录列表   http://127.0.0.1:8787/_catalog
+  未命中快照时回源: https://illyvoip.com（HTML 仍用本地快照）
+  公网访问请用: http://<服务器IP>:8787/ （HTML 内链按浏览器 Host 自动替换）
+  HTTPS 监听 0.0.0.0:443（证书: /etc/ssl/cloudflare/freeokcc-origin.pem）

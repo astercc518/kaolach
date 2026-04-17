@@ -1,0 +1,16 @@
+# 安装：sudo cp deploy/illyvoip-preview.service /etc/systemd/system/ && sudo systemctl daemon-reload
+# 若 Node 不在 /opt/node/bin/node，请修改下面 ExecStart
+[Unit]
+Description=IllyVoIP 静态快照预览（preview-server.mjs）
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/illyvoip-preview
+EnvironmentFile=-/opt/illyvoip-preview/.env
+ExecStart=/opt/node/bin/node /opt/illyvoip-preview/preview-server.mjs
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

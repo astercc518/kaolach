@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account Portal - IllyVoIP</title>
+    <link rel="shortcut icon" href="https://illyvoip.com/assets/img/favicon.png">
+
+    <!-- Fonts -->
+    
+    <style type="text/css">@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/greek/wght/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/greek/wght/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.0.16/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/greek/wght/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/greek/wght/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.0.16/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/greek/wght/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
+
+    <!-- CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/toastr.min.css" rel="stylesheet">
+
+    <!-- Light Theme -->
+    <style>
+        :root{
+            --bg:#f6f9ff; --bg-2:#ffffff;
+            --ink:#0f172a; --ink-2:#334155; --muted:#64748b;
+            --line:#e2e8f0;
+            --brand:#14b8a6; --brand-2:#3b82f6;
+            --ring: rgba(20,184,166,.25);
+            --shadow: 0 10px 30px rgba(2,6,23,.08);
+            --radius:10px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color:var(--ink);
+            background:
+                radial-gradient(900px 420px at -8% -10%, rgba(59,130,246,.10), transparent 50%),
+                radial-gradient(900px 420px at 110% 10%, rgba(20,184,166,.14), transparent 50%),
+                var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overflow-x:hidden;
+        }
+        a{color:var(--brand-2); text-decoration:none}
+        a:hover{opacity:.9}
+
+        .wrap{ max-width:1180px; margin:0 auto; padding:28px 20px 120px; }
+
+        /* Center area */
+        .center-stage{
+            min-height: calc(100vh - 160px);   /* room for outer padding + helpbar */
+            display:flex; align-items:center; justify-content:center;
+            padding:12px 0;
+        }
+        @media (max-width: 576px){
+            .center-stage{ min-height: calc(100vh - 150px); }
+        }
+
+        /* Stack: logo + form, tight spacing */
+        .stack{
+            display:flex; flex-direction:column; align-items:center;
+            gap:10px;                                 /* controls space between logo and card */
+            width:100%;
+        }
+
+        /* Logo above the form */
+        .brand-above{ display:flex; justify-content:center; align-items:center; }
+        .brand-above img{
+            height:44px; width:auto; display:block;   /* display:block eliminates baseline whitespace */
+        }
+
+        /* Login card */
+        .card{
+            background: var(--bg-2); border:1px solid var(--line);
+            border-radius:var(--radius); padding:22px; box-shadow: var(--shadow);
+            width:min(560px, 100%);
+        }
+        .card h3{ font-weight:800; margin:0 0 4px; }
+        .micro{ color:var(--ink-2); font-size:13px; margin-bottom:12px }
+
+        .field{ position:relative; margin-bottom:12px; }
+        .form-control{
+            background:#ffffff!important; color:var(--ink)!important;
+            border:1px solid var(--line)!important;
+            border-radius:12px; padding:12px 44px 12px 44px;
+            outline:none; box-shadow:none;
+        }
+        .form-control:focus{ border-color:var(--brand)!important; box-shadow:0 0 0 6px var(--ring)!important; }
+        .ico{ position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.8; }
+        .act{ position:absolute; right:12px; top:50%; transform:translateY(-50%); opacity:.8; cursor:pointer; }
+
+        .btn-brand{
+            display:inline-flex; align-items:center; justify-content:center; gap:10px;
+            width:100%; padding:12px 16px;
+            background:linear-gradient(135deg, var(--brand), #10a89a);
+            color:#ffffff; font-weight:800; border:none; border-radius:12px;
+            box-shadow: 0 10px 24px rgba(20,184,166,.25), inset 0 1px 0 rgba(255,255,255,.25);
+            transition: transform .06s ease, filter .2s ease;
+        }
+        .btn-brand:hover{filter:saturate(1.05) brightness(1.02)}
+        .btn-brand:active{transform:translateY(1px)}
+
+        .divider{ height:1px; background:var(--line); margin:14px 0; }
+        .links{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--ink-2); font-size:13px }
+        .caps-hint{ color:#b91c1c; font-size:12px; display:none; margin-top:6px }
+        .loginerrors{ color:#b91c1c; text-align:center }
+
+        /* Sticky Help Bar */
+        .helpbar{
+            position:fixed; left:50%; transform:translateX(-50%);
+            bottom:14px; width:min(1180px, calc(100% - 24px));
+            background:#ffffff; border:1px solid var(--line);
+            border-radius:14px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:10px;
+            box-shadow: var(--shadow); z-index:50;
+        }
+        .helpbar a{ padding:8px 12px; border-radius:10px; font-weight:700; color:#ffffff; background:linear-gradient(135deg, var(--brand-2), #60a5fa); border:none }
+    </style>
+
+    <script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-H/5bR8BVxoDZIIp1lThXvsuAj/gHvImPQ0kayVpCevmOrRalo0FwJubK3EoX8w37" nonce="85038f87-da30-4db4-8663-a08ddce0ba2a"></script><script src="assets/js/modernizr.min.js" type="text/javascript"></script>
+    <script async="" src="https://www.google.com/recaptcha/api.js" defer="" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkreader" type="text/javascript"></script>
+<script type="text/javascript">
+    (function () { 
+        function initializeDarkMode() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                enableDark();
+                if (darkModeToggle) darkModeToggle.checked = true;
+            } else {
+                disableDark();
+                if (darkModeToggle) darkModeToggle.checked = false;
+            }
+        }
+ 
+        function enableDark() {
+			DarkReader.setFetchMethod(window.fetch);
+            DarkReader.enable({
+                brightness: 100, // Adjust brightness
+                contrast: 90,    // Adjust contrast
+                sepia: 0,         // Adjust sepia
+				grayscale: 50,
+            });
+			
+			document.body.classList.add('dark-mode');
+ 
+            const logoSmall = document.querySelector('.logo-small');
+            const logoLarge = document.querySelector('.logo-large');
+            if (logoSmall) logoSmall.src = 'https://illyvoip.com/assets/img/logo-white.png';
+            if (logoLarge) logoLarge.src = 'https://illyvoip.com/assets/img/logo-white.png';
+
+            localStorage.setItem('darkMode', 'enabled'); // Save state
+        }
+ 
+        function disableDark() {
+            DarkReader.disable();
+			
+			document.body.classList.remove('dark-mode');
+			
+            // Update logos to default
+            const logoSmall = document.querySelector('.logo-small');
+            const logoLarge = document.querySelector('.logo-large');
+            if (logoSmall) logoSmall.src = 'https://illyvoip.com/assets/img/logo.png';
+            if (logoLarge) logoLarge.src = 'https://illyvoip.com/assets/img/logo.png';
+
+            localStorage.setItem('darkMode', 'disabled'); // Save state
+        }
+ 
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find the toggle switch
+            const darkModeToggle = document.querySelector('#darkModeToggle');
+ 
+            initializeDarkMode();
+ 
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('change', function () {
+                    if (darkModeToggle.checked) {
+                        enableDark();
+                    } else {
+                        disableDark();
+                    }
+                });
+            }
+        });
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+			DarkReader.setFetchMethod(window.fetch);
+            DarkReader.enable({
+                brightness: 100,
+                contrast: 90,
+                sepia: 0,
+				grayscale: 20,
+            });
+			
+			document.body.classList.add('dark-mode');
+
+            // Update logos to white (immediate load)
+            document.addEventListener('DOMContentLoaded', function () {
+                const logoSmall = document.querySelector('.logo-small');
+                const logoLarge = document.querySelector('.logo-large');
+                if (logoSmall) logoSmall.src = 'https://illyvoip.com/assets/img/logo-white.png';
+                if (logoLarge) logoLarge.src = 'https://illyvoip.com/assets/img/logo-white.png';
+            });
+        }
+    })();
+</script>
+<script src="https://app.groas.ai/content.js" type="text/javascript" defer=""></script><script defer="" referrerpolicy="origin" src="/cdn-cgi/zaraz/s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyQWNjb3VudCUyMFBvcnRhbCUyMC0lMjBJbGx5Vm9JUCUyMiUyQyUyMnglMjIlM0EwLjQ0MjQ1MTk0MDI2NTIyNzclMkMlMjJ3JTIyJTNBMTI4MCUyQyUyMmglMjIlM0E3MjAlMkMlMjJqJTIyJTNBNzIwJTJDJTIyZSUyMiUzQTEyODAlMkMlMjJsJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZpbGx5dm9pcC5jb20lMkZteSUyRmluZGV4LnBocCUzRnJlZGlyZWN0JTNEJTJGbXklMkZzaXBzZXR0aW5ncy5waHAlM0ZsYW5nJTNEemglMjIlMkMlMjJyJTIyJTNBJTIyJTIyJTJDJTIyayUyMiUzQTI0JTJDJTIybiUyMiUzQSUyMlVURi04JTIyJTJDJTIybyUyMiUzQS00ODAlMkMlMjJxJTIyJTNBJTVCJTVEJTdE"></script><script data-cfasync="false" nonce="85038f87-da30-4db4-8663-a08ddce0ba2a">try{(function(w,d){!function(bH,bI,bJ,bK){if(bH.zaraz)console.error("zaraz is loaded twice");else{bH[bJ]=bH[bJ]||{};bH[bJ].executed=[];bH.zaraz={deferred:[],listeners:[]};bH.zaraz._v="5876";bH.zaraz._n="85038f87-da30-4db4-8663-a08ddce0ba2a";bH.zaraz.q=[];bH.zaraz._f=function(bL){return async function(){var bM=Array.prototype.slice.call(arguments);bH.zaraz.q.push({m:bL,a:bM})}};for(const bN of["track","set","ecommerce","debug"])bH.zaraz[bN]=bH.zaraz._f(bN);bH.zaraz.init=()=>{var bO=bI.getElementsByTagName(bK)[0],bP=bI.createElement(bK),bQ=bI.getElementsByTagName("title")[0];bQ&&(bH[bJ].t=bI.getElementsByTagName("title")[0].text);bH[bJ].x=Math.random();bH[bJ].w=bH.screen.width;bH[bJ].h=bH.screen.height;bH[bJ].j=bH.innerHeight;bH[bJ].e=bH.innerWidth;bH[bJ].l=bH.location.href;bH[bJ].r=bI.referrer;bH[bJ].k=bH.screen.colorDepth;bH[bJ].n=bI.characterSet;bH[bJ].o=(new Date).getTimezoneOffset();if(bH.dataLayer)for(const bR of Object.entries(Object.entries(dataLayer).reduce((bS,bT)=>({...bS[1],...bT[1]}),{})))zaraz.set(bR[0],bR[1],{scope:"page"});bH[bJ].q=[];for(;bH.zaraz.q.length;){const bU=bH.zaraz.q.shift();bH[bJ].q.push(bU)}bP.defer=!0;for(const bV of[localStorage,sessionStorage])Object.keys(bV||{}).filter(bX=>bX.startsWith("_zaraz_")).forEach(bW=>{try{bH[bJ]["z_"+bW.slice(7)]=JSON.parse(bV.getItem(bW))}catch{bH[bJ]["z_"+bW.slice(7)]=bV.getItem(bW)}});bP.referrerPolicy="origin";bP.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bH[bJ])));bO.parentNode.insertBefore(bP,bO)};["complete","interactive"].includes(bI.readyState)?zaraz.init():bH.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bc=>new Promise(bd=>{if(bc){bc.e&&bc.e.forEach(be=>{try{const bf=d.querySelector("script[nonce]"),bg=bf?.nonce||bf?.getAttribute("nonce"),bh=d.createElement("script");bg&&(bh.nonce=bg);bh.innerHTML=be;bh.onload=()=>{d.head.removeChild(bh)};d.head.appendChild(bh)}catch(bi){console.error(`Error executing script: ${be}\n`,bi)}});Promise.allSettled((bc.f||[]).map(bj=>fetch(bj[0],bj[1])))}bd()});zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script><script>(function(w,d){})(window,document)</script><script>(function(w,d){;w.zarazData.executed.push("Pageview");})(window,document)</script><script>(function(w,d){})(window,document)</script><style id="googleidentityservice_button_styles">.qJTHM{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;color:#202124;direction:ltr;-webkit-touch-callout:none;font-family:Roboto-Regular,arial,sans-serif;-webkit-font-smoothing:antialiased;font-weight:400;margin:0;overflow:hidden;-webkit-text-size-adjust:100%}.ynRLnc{left:-9999px;position:absolute;top:-9999px}.L6cTce{display:none}.bltWBb{overflow-wrap:break-word;word-break:break-word}.hSRGPd{color:#1a73e8;cursor:pointer;font-weight:500;text-decoration:none}.Bz112c-W3lGp{height:16px;width:16px}.Bz112c-E3DyYd{height:20px;width:20px}.Bz112c-r9oPif{height:24px;width:24px}.Bz112c-u2z5K{height:36px;width:36px}.Bz112c-uaxL4e{border-radius:10px}.LgbsSe-Bz112c{display:block}.S9gUrf-YoZ4jf{border:none;margin:0;padding:0}.S9gUrf-YoZ4jf *{border:none;margin:0;padding:0}.fFW7wc-ibnC6b>.aZ2wEe>div{border-color:#4285f4}.P1ekSe-ZMv3u{-webkit-transition:height .2s linear;transition:height .2s linear}.P1ekSe-ZMv3u>div:first-child{background-color:#1a73e8!important;-webkit-transition:width .3s linear;transition:width .3s linear}.P1ekSe-ZMv3u>div:nth-child(2){background-image:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.7))),-webkit-gradient(linear,left top,right top,from(#1a73e8),to(#1a73e8))!important;background-image:-webkit-linear-gradient(left,rgba(255,255,255,.7),rgba(255,255,255,.7)),-webkit-linear-gradient(left,#1a73e8,#1a73e8)!important;background-image:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(90deg,#1a73e8,#1a73e8)!important}.P1ekSe-ZMv3u>div:nth-child(3){background-image:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.7))),-webkit-gradient(linear,left top,right top,from(#1a73e8),to(#1a73e8))!important;background-image:-webkit-linear-gradient(left,rgba(255,255,255,.7),rgba(255,255,255,.7)),-webkit-linear-gradient(left,#1a73e8,#1a73e8)!important;background-image:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(90deg,#1a73e8,#1a73e8)!important}.haAclf{display:inline-block}.nsm7Bb-HzV7m-LgbsSe{border-radius:4px;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s;transition:background-color .218s,border-color .218s;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;border:1px solid #dadce0;color:#3c4043;cursor:pointer;font-family:Google Sans,arial,sans-serif;font-size:14px;height:40px;letter-spacing:.25px;outline:none;overflow:hidden;padding:0 12px;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}@media screen and (-ms-high-contrast:active){.nsm7Bb-HzV7m-LgbsSe{border:2px solid windowText;color:windowText}}@media screen and (preferes-contrast:more){.nsm7Bb-HzV7m-LgbsSe{color:#000}}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe{font-size:14px;height:32px;letter-spacing:.25px;padding:0 10px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe{font-size:11px;height:20px;letter-spacing:.3px;padding:0 8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe{padding:0;width:40px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe{width:32px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe{width:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK{border-radius:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe{border-radius:16px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe{border-radius:10px}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc{border:none;color:#fff}.nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc{background-color:#1a73e8}.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{background-color:#202124;color:#e8eaed}@media screen and (prefers-contrast:more){.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{color:#fff}}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:18px;margin-right:8px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:14px;min-width:14px;width:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:10px;min-width:10px;width:10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin-left:8px;margin-right:-4px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:10px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:4px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-top-left-radius:3px;border-bottom-left-radius:3px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;align-items:center;background-color:#fff;height:36px;margin-left:-10px;margin-right:12px;min-width:36px;width:36px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:28px;margin-left:-8px;margin-right:10px;min-width:28px;width:28px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:16px;margin-left:-6px;margin-right:8px;min-width:16px;width:16px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:3px;margin-left:2px;margin-right:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:8px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;align-items:center;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;height:100%;position:relative;width:100%}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX{-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:1;-webkit-box-flex:1;flex-grow:1;font-family:Google Sans,arial,sans-serif;font-weight:500;overflow:hidden;text-overflow:ellipsis;vertical-align:top}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-weight:300}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:0;-webkit-box-flex:0;flex-grow:0}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe{-webkit-transition:background-color .218s;transition:background-color .218s;bottom:0;left:0;position:absolute;right:0;top:0}.nsm7Bb-HzV7m-LgbsSe:focus,.nsm7Bb-HzV7m-LgbsSe:hover{box-shadow:none;border-color:rgb(210,227,252);outline:none}.nsm7Bb-HzV7m-LgbsSe:focus-within{outline:2px solid #00639b;border-color:transparent}.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.08)}.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.1)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.24)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.32)}.nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY{border-radius:50%;display:-webkit-box;display:-webkit-flex;display:flex;height:20px;margin-left:-4px;margin-right:8px;min-width:20px;width:20px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-family:Roboto;font-size:12px;text-align:left}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS,.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf{overflow:hidden;text-overflow:ellipsis}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;align-items:center;color:#5f6368;fill:#5f6368;font-size:11px;font-weight:400}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#e8eaed;fill:#e8eaed}@media screen and (prefers-contrast:more){.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff,.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#000;fill:#000}}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c{height:18px;margin:-3px -3px -3px 2px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:3px;border-bottom-right-radius:3px;margin-left:12px;margin-right:-10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:18px}.L5Fo6c-sM5MNb{border:0;display:block;left:0;position:relative;top:0}.L5Fo6c-bF1uUb{border-radius:4px;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0}.L5Fo6c-bF1uUb:focus{border:none;outline:none}sentinel{}</style><link id="googleidentityservice" type="text/css" media="all" href="https://accounts.google.com/gsi/style" rel="stylesheet"></head>
+<body class="widescreen">
+    <div class="wrap">
+        <main class="center-stage">
+            <div class="stack">
+                <a class="brand-above" href="https://illyvoip.com" aria-label="IllyVoIP home">
+                    <img src="https://illyvoip.com/img/brandid/logos/logo.webp" alt="IllyVoIP logo" width="155" height="44">
+                </a>
+
+                <section style="margin-top: 40px;" class="card" aria-label="Login form">
+                    <h3>Log in</h3>
+                    <div class="micro">Access your account portal.</div>
+
+                    <form class="form-horizontal m-t-10 login" action="">
+                        <input id="redirect" type="hidden" name="redirect" value="/my/sipsettings.php?lang=zh">
+                        <input type="hidden" id="csrf_token" name="csrf_token" value="24ce0f0a501b2652d3be2b5acf94be36c64febbdde949195c0971ce9cb5584a7">
+
+                        <div class="field">
+                            <span class="ico">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#94a3b8"><path d="M12 13L2 6.76V6a2 2 0 012-2h16a2 2 0 012 2v.76L12 13z"></path><path d="M12 15l10-6.24V18a2 2 0 01-2 2H4a2 2 0 01-2-2V8.76L12 15z"></path></svg>
+                            </span>
+                            <input class="form-control" id="email" type="email" required="" placeholder="Email" autocomplete="username">
+                        </div>
+
+                        <div class="field">
+                            <span class="ico">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#94a3b8"><path d="M17 8V6a5 5 0 10-10 0v2H5v14h14V8h-2zm-8 0V6a3 3 0 116 0v2H9z"></path></svg>
+                            </span>
+                            <input class="form-control" id="password" type="password" required="" placeholder="Password" autocomplete="current-password">
+                            <div id="capsHint" class="caps-hint">Caps Lock is on.</div>
+                        </div>
+
+                        <div id="2fa_auth" style="display:none;" class="field">
+                            <span class="ico">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#94a3b8"><path d="M5 12l5 5L20 7"></path></svg>
+                            </span>
+                            <input class="form-control" id="twofactorauth" type="number" placeholder="Two-factor code (if prompted)">
+                        </div>
+
+                        <div class="links" style="margin:8px 0 4px; justify-content:flex-end">
+                            <a href="forgot-password.php" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot password?</a>
+                        </div>
+
+                        <div id="hcaptcha" class="form-group" style="margin-top:8px">
+                            <center>
+                                <div class="g-recaptcha" data-sitekey="6LcH7ZQqAAAAAP1NUxCMrvrREsVqw1NXhGKcg0__"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-oezd2w715jde" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcH7ZQqAAAAAP1NUxCMrvrREsVqw1NXhGKcg0__&amp;co=aHR0cHM6Ly9pbGx5dm9pcC5jb206NDQz&amp;hl=en&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=t37fjzycw00h"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                                <span id="recaptcha-error" style="color:#b91c1c; font-size:13px; display:none;">Google Captcha is required.</span>
+                            </center>
+                        </div>
+
+                        <div class="form-group text-center m-t-10">
+                            <div class="loginerrors" style="display:none;"></div>
+                        </div>
+
+                        <div class="form-group m-t-10">
+                            <button class="btn-brand" type="submit">Log in</button>
+                        </div>
+
+                        <!-- Google sign-in -->
+                        <div style="margin-top:10px; display:flex; justify-content:center">
+                            <script async="" src="https://accounts.google.com/gsi/client" type="text/javascript"></script>
+                            <div id="g_id_onload" data-client_id="190116429834-kq0k2fgv7ttbquregrl4g6ue8e83u7li.apps.googleusercontent.com" data-login_uri="https://illyvoip.com/my/application/register_user_google.php" data-auto_prompt="false">
+                            </div>
+                            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><iframe src="https://accounts.google.com/gsi/button?type=standard&amp;size=large&amp;theme=outline&amp;text=sign_in_with&amp;shape=rectangular&amp;logo_alignment=left&amp;is_fedcm_supported=true&amp;client_id=190116429834-kq0k2fgv7ttbquregrl4g6ue8e83u7li.apps.googleusercontent.com&amp;iframe_id=gsi_804016_192776&amp;cas=iXVs%2FKMSBOFKoBbGdU95azBRqOLpglGJe86MbktSsgo" class="L5Fo6c-PQbLGe" allow="identity-credentials-get" id="gsi_804016_192776" title="Sign in with Google Button" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 204px; border: 0px; margin: -2px -10px;"></iframe></div></div>
+                        </div>
+
+                        <div class="divider"></div>
+                        <div class="links" style="justify-content:center">
+                            <span>New to IllyVoIP?</span>
+                            <a href="register.php"><strong>Sign up (instant access + free credit)</strong></a>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sticky Help Bar - WhatsApp only -->
+    <div class="helpbar" role="complementary" aria-label="Support">
+        <div style="color:#0b1220; font-weight:600">Need help?</div>
+        <a href="https://wa.me/38349537999" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/detect.js" type="text/javascript"></script>
+    <script src="assets/js/fastclick.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="assets/js/waves.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.slimscroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.scrollTo.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.core.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.app.js" type="text/javascript"></script>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+    <script src="assets/js/toastr.min.js" type="text/javascript"></script>
+
+    <!-- Toastr flashes (unchanged) -->
+    <script type="text/javascript">
+        
+        // Show/Hide password + CapsLock hint
+        (function(){
+            const pw = document.getElementById('password');
+            const tog = document.getElementById('togglePw');
+            const hint = document.getElementById('capsHint');
+            if (tog && pw){
+                tog.addEventListener('click', function(){
+                    pw.type = (pw.type === 'password') ? 'text' : 'password';
+                    pw.focus();
+                });
+            }
+            if (pw && hint){
+                pw.addEventListener('keyup', function(e){
+                    const on = e.getModifierState && e.getModifierState('CapsLock');
+                    hint.style.display = on ? 'block' : 'none';
+                });
+            }
+        })();
+
+        // reCAPTCHA guard (unchanged)
+        (function(){
+            const form = document.querySelector('form.login');
+            if(!form) return;
+            form.addEventListener('submit', function(e){
+                try{
+                    if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse() === ""){
+                        e.preventDefault();
+                        const el = document.getElementById('recaptcha-error');
+                        if (el) el.style.display = 'inline';
+                        return false;
+                    }
+                }catch(_){ }
+            });
+        })();
+    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f4db16b15fda40a49d3647cebb67dba0&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" name="c-oezd2w715jde" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;k=6LcH7ZQqAAAAAP1NUxCMrvrREsVqw1NXhGKcg0__&amp;bft=0dAFcWeA4QKPTAHLGFpDFl9_y-0O3Id6kbzA0fDfOY2CwOFn1U-bs2clOCdGZVIZvHyX15iQDXLcfXuiC8jqD7zLl1ksNCRY83JQ" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
